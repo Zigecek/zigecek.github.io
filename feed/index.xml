@@ -9,35 +9,15 @@
 
 <channel>
 	<title>Zigecek</title>
-	<atom:link href="http://zigecek.github.io/feed/" rel="self" type="application/rss+xml" />
-	<link>http://zigecek.github.io</link>
+	<atom:link href="http://zigecek.github.io/feed" rel="self" type="application/rss+xml" />
+	<link>http://zigecek.github.io/</link>
 	<description>Další web používající WordPress</description>
-	<lastBuildDate>Tue, 19 Jan 2021 12:33:31 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 19 Jan 2021 12:45:45 +0000</lastBuildDate>
 	<language>cs</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=5.6</generator>
-	<item>
-		<title>Ahoj všichni!</title>
-		<link>http://zigecek.github.io/2021/01/19/ahoj-vsichni/</link>
-					<comments>http://zigecek.github.io/2021/01/19/ahoj-vsichni/#comments</comments>
-		
-		<dc:creator><![CDATA[zige]]></dc:creator>
-		<pubDate>Tue, 19 Jan 2021 12:33:31 +0000</pubDate>
-				<category><![CDATA[Nezařazené]]></category>
-		<guid isPermaLink="false">http://zigecek.github.io/?p=1</guid>
-
-					<description><![CDATA[Vítejte ve WordPressu. Toto je váš první příspěvek. Můžete ho upravit, nebo smazat a postupně pak začít s tvorbou vlastního webu.]]></description>
-										<content:encoded><![CDATA[
-<p>Vítejte ve WordPressu. Toto je váš první příspěvek. Můžete ho upravit, nebo smazat a postupně pak začít s tvorbou vlastního webu.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>http://zigecek.github.io/2021/01/19/ahoj-vsichni/feed/</wfw:commentRss>
-			<slash:comments>1</slash:comments>
-		
-		
-			</item>
-	</channel>
+</channel>
 </rss>

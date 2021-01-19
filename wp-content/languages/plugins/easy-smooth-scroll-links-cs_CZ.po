@@ -1,0 +1,68 @@
+# Translation of Plugins - Easy Smooth Scroll Links  &#8211; Smooth Scrolling Anchor - Stable (latest release) in Czech
+# This file is distributed under the same license as the Plugins - Easy Smooth Scroll Links  &#8211; Smooth Scrolling Anchor - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-08-05 12:21:44+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n >= 2 && n <= 4) ? 1 : 2);\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: cs_CZ\n"
+"Project-Id-Version: Plugins - Easy Smooth Scroll Links  &#8211; Smooth Scrolling Anchor - Stable (latest release)\n"
+
+#. Plugin Name of the plugin
+msgid "Easy Smooth Scroll Links"
+msgstr "Easy Smooth Scroll Links"
+
+#: options.php:183
+msgid " This feature is experimental, might cause conflict with some slider plugins, or blank pages."
+msgstr "Tato funkce je experimentální, může způsobit konflikt s některými pluginy nebo prázdnými stránkami."
+
+#: options.php:182
+msgid "Warning"
+msgstr "Varování"
+
+#: options.php:176
+msgid "Enable Scrolling from One Page to Another ?"
+msgstr "Povolit posouvání z jedné strany na druhou?"
+
+#: options.php:161
+msgid "Exclude Anchors Exactly Match"
+msgstr "Vyloučit některé kotvy (přesně zapsat)"
+
+#: options.php:147
+msgid "Exclude Anchors Beginning With ( default is #tab   #quicktab  #pane )\t"
+msgstr "Vyloučit kotvy začínající na (výchozí je #tab #quicktab  #pane )\t"
+
+#: options.php:47
+msgid "Choose an Animation Effects"
+msgstr "Zvolte efekt animace"
+
+#: options.php:43
+msgid "Scrolling Animation Effects ( default is easeInQuint ) "
+msgstr "Efekt posunu animace (výchozí easeInQuint) "
+
+#: options.php:32
+msgid "Offset ( default is 20 )"
+msgstr "Odsazení (výchozí 20)"
+
+#: options.php:21
+msgid "Scroll Speed ( smaller number, faster, default is 900 )"
+msgstr "Rychlost posunu (malá, rychlá, výchozí 900)"
+
+#: options.php:10
+msgid "Support Forum on WordPress.org"
+msgstr "Podpora na WordPres.org (Anglicky)"
+
+#: options.php:2
+msgid "Easy Smooth Scroll Links Setting"
+msgstr "Nastavení Easy Smooth Scroll Links"
+
+#: index.php:132
+msgid "Settings"
+msgstr "Nastavení"
+
+#: index.php:119
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Nemáte dostatečná oprávnění k přístupu na tuto stránku."

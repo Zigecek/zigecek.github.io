@@ -89,3 +89,9 @@ RewriteRule . /zigecek.github.io/index.php [L]
 </IfModule>
 
 # END WordPress
+# BEGIN FRedirect_ErrorDocument
+# Direktivy (řádky) mezi "BEGIN FRedirect_ErrorDocument" a "END FRedirect_ErrorDocument" jsou
+# dynamicky generované a měly by být upravovány pouze pomocí filtrů WordPressu.
+# Veškeré změny směrnic mezi těmito značkami budou přepsány.
+ErrorDocument 404 /zigecek.github.io/index.php?error=404
+# END FRedirect_ErrorDocument

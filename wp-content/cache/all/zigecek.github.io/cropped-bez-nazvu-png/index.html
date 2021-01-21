@@ -38,7 +38,7 @@ html{font-size:93.75%;}a,.page-title{color:#a4da49;}a:hover,a:focus{color:#00000
 <link rel='stylesheet' id='wp-block-library-css'  href='http://localhost/zigecek.github.io/wp-includes/css/dist/block-library/style.min.css?ver=5.6' media='all' />
 <link rel='stylesheet' id='typed-cursor-css'  href='http://localhost/zigecek.github.io/wp-content/plugins/animated-typing-effect/assets/css/cursor.css?ver=5.6' media='all' />
 <link rel='stylesheet' id='mousemagic-css-css'  href='http://localhost/zigecek.github.io/wp-content/themes/astra/assets/css/magic-mouse.css?ver=5.6' media='all' />
-<link rel='stylesheet' id='c1cace5f0-css'  href='http://localhost/zigecek.github.io/wp-content/uploads/essential-addons-elementor/734e5f942.min.css?ver=1611184885' media='all' />
+<link rel='stylesheet' id='c1cace5f0-css'  href='http://localhost/zigecek.github.io/wp-content/uploads/essential-addons-elementor/734e5f942.min.css?ver=1611189062' media='all' />
 <link rel='stylesheet' id='hfe-style-css'  href='http://localhost/zigecek.github.io/wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css?ver=1.5.6' media='all' />
 <link rel='stylesheet' id='elementor-icons-css'  href='http://localhost/zigecek.github.io/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.9.1' media='all' />
 <link rel='stylesheet' id='elementor-animations-css'  href='http://localhost/zigecek.github.io/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.0.16' media='all' />
@@ -82,10 +82,98 @@ function jltmaNS(n){for(var e=n.split("."),a=window,i="",r=e.length,t=0;r>t;t++)
 <link rel="alternate" type="text/xml+oembed" href="http://localhost/zigecek.github.io/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%2Fzigecek.github.io%2Fcropped-bez-nazvu-png%2F&#038;format=xml" />
 <!-- start Simple Custom CSS and JS -->
 <style>
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.butt {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 240px;
+}
+
+.btn {
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+/*btn_background*/
+.effect01 {
+  color: #FFF;
+  border: 3px solid #FFFFFF;
+  box-shadow:0px 0px 0px 1px #000 inset;
+  background-color: #2A2A2A;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.effect01:hover {
+  border: 3px solid #666;
+  background-color: #FFF;
+  box-shadow:0px 0px 0px 4px #EEE inset;
+}
+
+/*btn_text*/
+.effect01 span {
+  transition: all 0.2s ease-out;
+  z-index: 2;
+}
+.effect01:hover span{
+  letter-spacing: 0.13em;
+  color: #333;
+  font-size: 30;
+}
+
+/*highlight*/
+.effect01:after {
+  background: #FFF;
+  border: 0px solid #000;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: .8;
+  position: absolute;
+  top: -50px;
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+  width: 50px;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);/*easeOutCirc*/
+  z-index: 1;
+}
+.effect01:hover:after {
+  background: #FFF;
+  border: 20px solid #000;
+  opacity: 0;
+  left: 120%;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
 #custombutton {
   background: #818A91;
   color: white;
   border: none;
+  width: 160px;
 }</style>
 <!-- end Simple Custom CSS and JS -->
 <!-- start Simple Custom CSS and JS -->
@@ -433,11 +521,11 @@ var astra = {"break_point":"921","isRtl":""};
 <script src='http://localhost/zigecek.github.io/wp-content/plugins/animated-typing-effect/assets/js/typed.js?ver=1' id='typed-script-js'></script>
 <script src='http://localhost/zigecek.github.io/wp-content/plugins/animated-typing-effect/assets/js/typed.fe.js?ver=1' id='typed-frontend-js'></script>
 <script id='c1cace5f0-js-extra'>
-var localize = {"ajaxurl":"http:\/\/localhost\/zigecek.github.io\/wp-admin\/admin-ajax.php","nonce":"59ab268f82"};
+var localize = {"ajaxurl":"http:\/\/localhost\/zigecek.github.io\/wp-admin\/admin-ajax.php","nonce":"2f2fd21f2e"};
 </script>
-<script src='http://localhost/zigecek.github.io/wp-content/uploads/essential-addons-elementor/734e5f942.min.js?ver=1611184885' id='c1cace5f0-js'></script>
+<script src='http://localhost/zigecek.github.io/wp-content/uploads/essential-addons-elementor/734e5f942.min.js?ver=1611189062' id='c1cace5f0-js'></script>
 <script id='happy-elementor-addons-js-extra'>
-var HappyLocalize = {"ajax_url":"http:\/\/localhost\/zigecek.github.io\/wp-admin\/admin-ajax.php","nonce":"c744385c5f"};
+var HappyLocalize = {"ajax_url":"http:\/\/localhost\/zigecek.github.io\/wp-admin\/admin-ajax.php","nonce":"fcb369e680"};
 </script>
 <script src='http://localhost/zigecek.github.io/wp-content/plugins/happy-elementor-addons/assets/js/happy-addons.min.js?ver=2.19.0' id='happy-elementor-addons-js'></script>
 <script src='http://localhost/zigecek.github.io/wp-content/uploads/wpmss/wpmssab.min.js?ver=1611619684' id='wpmssab-js'></script>
@@ -463,4 +551,4 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 			/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
 			</script>
 				</body>
-</html><!-- WP Fastest Cache file was created in 0.66435503959656 seconds, on 21-01-21 0:21:26 -->
+</html><!-- WP Fastest Cache file was created in 0.69893002510071 seconds, on 21-01-21 1:31:02 -->

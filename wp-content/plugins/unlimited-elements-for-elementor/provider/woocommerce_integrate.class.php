@@ -210,6 +210,43 @@ class UniteCreatorWooIntegrate{
 		return($arrProduct);
 	}
 	
+	/**
+	 * get array of property names
+	 */
+	private function getArrPropertyNames($prefix = "", $isAddVariableData = false){
+		
+    	$arrProperties = array(
+    		$prefix."sku",
+    		$prefix."price",
+    		$prefix."regular_price",
+    		$prefix."sale_price",
+    		$prefix."stock_quantity",
+    		$prefix."stock_status",
+    		$prefix."weight",
+    		$prefix."length",
+    		$prefix."width",
+    		$prefix."height",
+    		$prefix."average_rating",
+    		$prefix."review_count"
+    	);
+		
+    	if($isAddVariableData == false)
+    		return($arrProperties);
+    	
+    	$arrVariable = array(
+    		$prefix."regular_price_from",
+    		$prefix."regular_price_to",
+    		$prefix."sale_price_from",
+    		$prefix."sale_price_to",
+    		$prefix."price_from",
+    		$prefix."price_to"
+    	);
+
+    	array_splice($arrProperties, 4, 0, $arrVariable);
+    	
+    	return($arrProperties);
+	}
+	
 	
 	/**
 	 * get product data
@@ -221,28 +258,14 @@ class UniteCreatorWooIntegrate{
 		
 		//wc_get_ac
     	$objInfo = wc_get_product($productID);
-		    	
+		
     	if(empty($objInfo))
     		return(null);
 				
     	$arrData = $objInfo->get_data();
 		$type = $objInfo->get_type();
     	
-    	$arrProperties = array(
-    		"sku",
-    		"price",
-    		"regular_price",
-    		"sale_price",
-    		"stock_quantity",
-    		"stock_status",
-    		"weight",
-    		"length",
-    		"width",
-    		"height",
-    		"height",
-    		"average_rating",
-    		"review_count"
-    	);
+    	$arrProperties = $this->getArrPropertyNames();
     	
     	$productSku = UniteFunctionsUC::getVal($arrData, "sku");
     	$salePrice = UniteFunctionsUC::getVal($arrData, "sale_price");
@@ -272,7 +295,7 @@ class UniteCreatorWooIntegrate{
     	if($type == self::PRODUCT_TYPE_VARIABLE){
     		
     		$arrPrices = $objInfo->get_variation_prices();
-    		    		
+    		
     		$arrProduct = $this->addPricesFromTo($arrProduct, $arrPrices);
     		
     		$arrProduct["woo_price"] = $arrProduct["woo_price_from"];
@@ -295,7 +318,6 @@ class UniteCreatorWooIntegrate{
     	$arrProduct["woo_discount_percent"] = $discountPercent;
     	
     	//add currency
-    	
     	$arrProduct["woo_currency"] = $this->currency;
     	$arrProduct["woo_currency_symbol"] = $this->currencySymbol;
 		    	
@@ -303,6 +325,30 @@ class UniteCreatorWooIntegrate{
     	$arrProduct = $this->addAddToCartData($arrProduct, $productID, $productSku);
     	
     	return($arrProduct);
+	}
+	
+	
+	/**
+	 * get woocommerce keys without post
+	 */
+	private function getWooProductKeysNoPost(){
+		
+		$arrProperties = $this->getArrPropertyNames("woo_", true);
+		
+		$arrKeys = array();
+		$arrKeys[] = "woo_type";
+		
+		$arrKeys += $arrProperties;
+		
+    	$arrKeys[] = "woo_discount_percent";
+    	$arrKeys[] = "woo_currency";
+    	$arrKeys[] = "woo_currency_symbol";
+    	$arrKeys[] = "woo_link_addcart_cart";
+    	$arrKeys[] = "woo_link_addcart_checkout";
+    	$arrKeys[] = "woo_addcart_ajax_attributes";
+    	
+    	
+		return($arrKeys);
 	}
 	
 	
@@ -376,6 +422,19 @@ class UniteCreatorWooIntegrate{
 		
 		return($response);
 	}
+	
+	/**
+	 * get woo keys without post id
+	 */
+	public static function getWooKeysNoPost(){
+		
+		$instance = self::getInstance();
+		
+		$response = $instance->getWooProductKeysNoPost();
+		
+		return($response);
+	}
+	
 	
 	/**
 	 * put filters js

@@ -393,7 +393,7 @@ class UniteCreatorParamsProcessor extends UniteCreatorParamsProcessorWork{
 			if($postType == "product"){
 				
 				$arrWooData = UniteCreatorWooIntegrate::getWooDataByType($postType, $postID);
-				
+								
 				if(!empty($arrWooData))
 					$arrData = $arrData + $arrWooData;
 			}
@@ -852,7 +852,6 @@ class UniteCreatorParamsProcessor extends UniteCreatorParamsProcessorWork{
 				
 		$currentQueryVars = $this->getPostListData_getCustomQueryFilters($currentQueryVars, $value, $name, $data);
 				
-		
 		$showDebugQuery = UniteFunctionsUC::getVal($value, "{$name}_show_query_debug");
 		$showDebugQuery = UniteFunctionsUC::strToBool($showDebugQuery);
 		
@@ -888,6 +887,59 @@ class UniteCreatorParamsProcessor extends UniteCreatorParamsProcessorWork{
 	
 	
 	/**
+	 * get manual selection
+	 */
+	private function getPostListData_manualSelection($value, $name, $data){
+		
+		$args = array();
+		
+		$postIDs = UniteFunctionsUC::getVal($value, $name."_manual_select_post_ids");
+		
+		$showDebugQuery = UniteFunctionsUC::getVal($value, "{$name}_show_query_debug");
+		$showDebugQuery = UniteFunctionsUC::strToBool($showDebugQuery);
+		
+		if(empty($postIDs)){
+			
+			if($showDebugQuery == true){
+				dmp("No Posts Selected");
+				HelperUC::addDebug("No Posts Selected");
+				
+				return(array());
+			}
+			
+		}
+		
+		$args["post__in"] = $postIDs;
+		$args["ignore_sticky_posts"] = true;
+		$args["post_type"] = "any";
+		
+				
+		if($showDebugQuery == true){
+			dmp("The Query Is:");
+			dmp($args);
+		}
+				
+		$query = new WP_Query($args);
+		$arrPosts = $query->posts;
+		
+		if(empty($arrPosts))
+			$arrPosts = array();
+		
+		//save last query
+		GlobalsProviderUC::$lastPostQuery = $query;
+		
+		HelperUC::addDebug("posts found: ".count($arrPosts));
+		
+		if($showDebugQuery == true){
+			dmp("Found Posts: ".count($arrPosts));
+		}
+				
+		return($arrPosts);
+		
+	}
+	
+	
+	/**
 	 * get post list data
 	 */
 	private function getPostListData($value, $name, $processType, $param, $data){
@@ -901,21 +953,31 @@ class UniteCreatorParamsProcessor extends UniteCreatorParamsProcessorWork{
 		$source = UniteFunctionsUC::getVal($value, "{$name}_source");
 		
 		$arrPosts = array();
-		
-		if($source === "current"){
-			
-			$arrPosts = $this->getPostListData_currentPosts($value, $name, $data);
-			
-		}else{
-			
-			$arrPosts = $this->getPostListData_custom($value, $name, $processType, $param, $data);
-			
-			$filters = array();
-			$arrPostsFromFilter = UniteProviderFunctionsUC::applyFilters("uc_filter_posts_list", $arrPosts, $value, $filters);
-			
-			if(!empty($arrPostsFromFilter))
-				$arrPosts = $arrPostsFromFilter;
+				
+		switch($source){
+			case "manual":
+				
+				$arrPosts = $this->getPostListData_manualSelection($value, $name, $data);
+				
+			break;
+			case "current":
+				
+				$arrPosts = $this->getPostListData_currentPosts($value, $name, $data);
+				
+			break;
+			default:		//custom
+				
+				$arrPosts = $this->getPostListData_custom($value, $name, $processType, $param, $data);
+				
+				$filters = array();
+				$arrPostsFromFilter = UniteProviderFunctionsUC::applyFilters("uc_filter_posts_list", $arrPosts, $value, $filters);
+				
+				if(!empty($arrPostsFromFilter))
+					$arrPosts = $arrPostsFromFilter;
+				
+			break;
 		}
+		
 		
 		if(empty($arrPosts))
 			$arrPosts = array();

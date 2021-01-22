@@ -1,4 +1,14 @@
 
+version 1.4.62
+
+-bug fix: fixed image size thumb name with "-" sign inside
+-change: show woo commerce placeholders if selected "for woocommerce products" checkbox in post list attribute
+-change: improved woo category output placeholder help, added getTermCustomFields function
+-bug fix: fixed some php warning related to array to string conversion, happening in php 8
+-feature: added text shadow field
+-feature: added "manual selection" in posts query
+
+
 version 1.4.61
 
 -feature: added max posts and order by options to current query posts selection

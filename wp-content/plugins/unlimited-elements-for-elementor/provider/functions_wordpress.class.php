@@ -571,7 +571,7 @@ defined('UNLIMITED_ELEMENTS_INC') or die('Restricted access');
 			$arrTaxonomies = self::getPostTypeTaxomonies($postType);
 			
 			if(empty($arrTaxonomies))
-				return($array);
+				return(array());
 			
 			$arrDataOutput = array();
 			
@@ -1555,8 +1555,31 @@ defined('UNLIMITED_ELEMENTS_INC') or die('Restricted access');
 			return(true);
 		}
 		
-		public static function a__________POST_ACTIONS_________(){}
+		/**
+		 * get post titles by ids
+		 */
+		public static function getPostTitlesByIDs($arrIDs){
+			
+			$db = self::getDB();
+			
+			$tablePosts = UniteProviderFunctionsUC::$tablePosts;
+			
+			$strIDs = implode(",", $arrIDs);
+			
+			if(empty($strIDs))
+				return(array());
+				
+			$strIDs = $db->escape($strIDs);
+			
+			$sql = "select ID as id,post_title as title, post_type as type from $tablePosts where ID in($strIDs)";
+			
+			$response = $db->fetchSql($sql);
+			
+			return($response);
+		}
 		
+		
+		public static function a__________POST_ACTIONS_________(){}
 		
 		
 		/**

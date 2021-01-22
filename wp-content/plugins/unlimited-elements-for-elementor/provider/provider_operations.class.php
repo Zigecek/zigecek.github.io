@@ -26,6 +26,48 @@ class ProviderOperationsUC extends UCOperations{
 		return($searchTerm);
 	}
 	
+	/**
+	 * get select 2 post titles from array of id's
+	 */
+	public function getSelect2PostTitles($data){
+		
+		$arrIDs = UniteFunctionsUC::getVal($data, "post_ids");
+		
+		$arrTypesAssoc = UniteFunctionsWPUC::getPostTypesAssoc(array(), true);
+				
+		if(empty($arrIDs))
+			return(null);
+			
+		$response = UniteFunctionsWPUC::getPostTitlesByIDs($arrIDs);
+				
+		if(empty($response))
+			return(null);
+		
+		$output = array();
+		
+		foreach($response as $record){
+			
+			$id = UniteFunctionsUC::getVal($record, "id");
+			$title = UniteFunctionsUC::getVal($record, "title");
+			$postType = UniteFunctionsUC::getVal($record, "type");
+			
+			$typeTitle = UniteFunctionsUC::getVal($arrTypesAssoc, $postType);
+			
+			if(empty($typeTitle))
+				$typeTitle = $postType;
+			
+			$title .= " ($typeTitle)";
+			
+			$item = array();
+			$item["id"] = $id;
+			$item["text"] = $title;
+			
+			$output[] = $item;
+		}
+		
+		return($output);
+	}
+	
 	
 	/**
 	 * get post list for select2
@@ -33,7 +75,7 @@ class ProviderOperationsUC extends UCOperations{
 	public function getPostListForSelectFromData($data, $addNotSelected = false, $limit = 10){
 				
 		$search = $this->getSearchFromData($data);
-				
+		
 		$arrTypesAssoc = UniteFunctionsWPUC::getPostTypesAssoc(array(), true);
 				
 		$arrPostTypes = array_keys($arrTypesAssoc);

@@ -1308,7 +1308,7 @@ function UniteCreatorAdmin(){
 		}
 		
 		//request specific post variables by ajax
-		ajaxRefreshChildPostParam(postID, enableCustomFields, enableCategory,  g_temp.typeCurrentPost);
+		ajaxRefreshChildPostParam(postID, enableCustomFields, enableCategory, false, g_temp.typeCurrentPost);
 		
 	}
 	
@@ -1316,12 +1316,13 @@ function UniteCreatorAdmin(){
 	/**
 	 * refresh child post param
 	 */
-	function ajaxRefreshChildPostParam(postID, enableCustomFields, enableCategory, childKey){
+	function ajaxRefreshChildPostParam(postID, enableCustomFields, enableCategory, isForWoo, childKey){
 		
 		var data = {
 				postid: postID,
 				enable_custom_fields: enableCustomFields,
-				enable_category: enableCategory
+				enable_category: enableCategory,
+				enable_woo: isForWoo
 		};
 		
 		g_ucAdmin.ajaxRequest("get_post_child_params", data, function(response){
@@ -1587,7 +1588,10 @@ function UniteCreatorAdmin(){
 				var enableCategory = g_ucAdmin.getVal(objLastParam, "use_category");
 				enableCategory = g_ucAdmin.strToBool(enableCategory);
 				
-				ajaxRefreshChildPostParam(postID, enableCustomFields, enableCategory, g_temp.typePost);
+				var isForWoo = g_ucAdmin.getVal(objLastParam, "for_woocommerce_products");
+				isForWoo = g_ucAdmin.strToBool(isForWoo);
+								
+				ajaxRefreshChildPostParam(postID, enableCustomFields, enableCategory, isForWoo,  g_temp.typePost);
 				
 			break;
 			default:

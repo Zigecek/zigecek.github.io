@@ -599,12 +599,121 @@ class UniteCreatorDialogParamElementor extends UniteCreatorDialogParam{
 	}
 	
 	/**
+	 * add color picker setting
+	 */
+	private function putColorPickerSetting($name, $text, $color){
+		?>
+			<?php $text?>:
+			
+ 		    <input type="text" name="<?php echo $name?>" class="uc-text-colorpicker" value="<?php echo $color?>" data-initval="<?php echo $color?>">
+			<div class='unite-color-picker-element'></div>
+			
+		<?php 
+	}
+	
+	/**
 	 * function for override
 	 */
 	protected function putTextShadowParam(){
 
 		$this->addHtmlSelector();
+		
+		return(false);
+		
+		/*
+		$params = array();
+		$params["class"] = "number";
+		
+		$objSettings = new UniteCreatorSettings();
+		
+		$objSettings->addTextBox("blur", "20", __("Default Value","unlimited-elements-for-elementor"),$params);
+		$objSettings->addTextBox("horizontal", "1", __("Min","unlimited-elements-for-elementor"),$params);
+		$objSettings->addTextBox("vertical", "100", __("Max","unlimited-elements-for-elementor"),$params);
+		
+		$textColor = __("Default Color","unlimited-elements-for-elementor");
+		
+		$objOutput = new UniteSettingsOutputWideUC();
+		$objOutput->init($objSettings);
+		
+		$checkID = "text_shadow_enable_default_values";
+		
+		?>			
+															
+			<label for="<?php echo esc_attr($checkID)?>">
+				<input id="<?php echo esc_attr($checkID)?>" type="checkbox" class="uc-param-checkbox uc-control" data-controlled-selector=".uc-default-settings" name="enable_default_values">
+				<?php _e("Enable Default Values", "unlimited-elements-for-elementor")?>
+			</label>
 			
+			<div class="unite-inputs-sap"></div>
+			
+			<div class="uc-default-settings">
+				
+					<hr>
+							
+					<!-- color setting -->
+			
+					<div class="unite-inputs-label">
+						<?php esc_html_e("Color", "unlimited-elements-for-elementor")?>:
+					</div>
+								
+					<?php 
+						$this->putColorPickerSetting("color", $textColor, "rgba(0,0,0,0.5)");
+					?>
+					
+					<div class="unite-inputs-sap"></div>
+					
+					
+					<!-- blur setting -->
+					
+					<div class="unite-inputs-label">
+						<?php esc_html_e("Blur", "unlimited-elements-for-elementor")?>:
+					</div>
+								
+					<?php 
+						$objOutput->drawSingleSetting("blur");
+					?>
+					
+					<div class="unite-inputs-sap"></div>
+					
+					
+					<!-- horizontal setting -->
+					
+					<div class="unite-inputs-label">
+						<?php esc_html_e("Horizontal", "unlimited-elements-for-elementor")?>:
+					</div>
+								
+					<?php 
+						$objOutput->drawSingleSetting("horizontal");
+					?>
+					
+					<div class="unite-inputs-sap"></div>
+					
+					
+					
+					<!-- vertical setting -->
+					
+					<div class="unite-inputs-label">
+						<?php esc_html_e("Vertical", "unlimited-elements-for-elementor")?>:
+					</div>
+								
+					<?php 
+						$objOutput->drawSingleSetting("vertical");
+					?>
+					
+					<div class="unite-inputs-sap"></div>
+					
+					
+			</div>
+			
+			<hr>
+			
+			<?php 
+				$this->addHtmlSelector();
+			?>
+			
+		<?php 
+		
+		*/	
 	}
 	
 	/**

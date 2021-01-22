@@ -43,6 +43,7 @@ class GlobalsProviderUC{
 	
 	const POST_ADDITION_CUSTOMFIELDS = "customfields";
 	const POST_ADDITION_CATEGORY = "category";
+	const POST_ADDITION_WOO = "woo";
 	
 	
 	/**

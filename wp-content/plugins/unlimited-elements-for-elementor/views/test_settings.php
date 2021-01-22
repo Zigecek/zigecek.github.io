@@ -11,10 +11,10 @@ defined('UNLIMITED_ELEMENTS_INC') or die('Restricted access');
 $operations = new ProviderOperationsUC();
 
 $data = array();
-$data["_type"] = "query";
-$data["q"] = "s";
+$data["post_ids"] = array(2,31,42);
 
-$response = $operations->getPostListForSelectFromData($data);
+
+$response = $operations->getSelect2PostTitles($data);
 
 dmp($response);
 exit();

@@ -617,21 +617,26 @@ defined('UNLIMITED_ELEMENTS_INC') or die('Restricted access');
 		private function getPostAttributesFromData_getPostAdditions($data){
 
 			$arrAdditions = array();
-						
+			
 			$enableCustomFields = UniteFunctionsUC::getVal($data, "enable_custom_fields");
 			$enableCustomFields = UniteFunctionsUC::strToBool($enableCustomFields);
 			
 			$enableCategory = UniteFunctionsUC::getVal($data, "enable_category");
 			$enableCategory = UniteFunctionsUC::strToBool($enableCategory);
 			
-			
+			$enableWoo = UniteFunctionsUC::getVal($data, "enable_woo");
+			$enableWoo = UniteFunctionsUC::strToBool($enableWoo);
+						
 			if($enableCustomFields == true)
 				$arrAdditions[] = GlobalsProviderUC::POST_ADDITION_CUSTOMFIELDS;
 			
 			if($enableCategory == true)
 				$arrAdditions[] = GlobalsProviderUC::POST_ADDITION_CATEGORY;
 			
+			if($enableWoo == true)
+				$arrAdditions[] = GlobalsProviderUC::POST_ADDITION_WOO;
 			
+				
 			return($arrAdditions);
 		}
 		

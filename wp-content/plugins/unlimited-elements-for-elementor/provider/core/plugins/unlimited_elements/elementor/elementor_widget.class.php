@@ -1045,7 +1045,6 @@ class UniteCreatorElementorWidget extends Widget_Base {
     			}
     			
     			//add min max step
-    			
     			$min = UniteFunctionsUC::getVal($param, "min_value");
     			$max = UniteFunctionsUC::getVal($param, "max_value");
     			$step = UniteFunctionsUC::getVal($param, "step");
@@ -1061,7 +1060,15 @@ class UniteCreatorElementorWidget extends Widget_Base {
     			    		
     		break;
     		case UniteCreatorDialogParam::PARAM_TEXTSHADOW:
+    			
     			$arrControl["name"] = $name;
+					
+				$arrDefaults["text_shadow_type"] = array(
+					'label' => $title
+				);
+				
+				$arrControl["fields_options"] = $arrDefaults;
+								
     		break;
     		case UniteCreatorDialogParam::PARAM_BOXSHADOW:
     			$arrControl["name"] = $name;
@@ -1093,7 +1100,7 @@ class UniteCreatorElementorWidget extends Widget_Base {
     			if(!empty($selector)){
     				$selector = $this->addWrapperToSelector($selector);
     				
-    				$arrControl["selector"] = $selector;
+    				$arrControl["selector"] = $selector;    				
     			}
     			
     		break;		//name value selectors
@@ -1481,6 +1488,8 @@ class UniteCreatorElementorWidget extends Widget_Base {
 			)
 		);
     	
+		do_action("ue_widget_advanced_controls", $this);
+		
     	$this->end_controls_section();
     }
     

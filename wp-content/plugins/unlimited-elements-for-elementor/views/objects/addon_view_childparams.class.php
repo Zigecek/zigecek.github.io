@@ -688,7 +688,7 @@ jQuery(document).ready(function(){
 		$strText = $linePrefix."{% set meta_fields = getTermMeta($field) %} \n\n";
 		
 		$strText .= $linePrefix."{{meta_fields.fieldname}} \n\n";
-		
+				
 		$strText .= $linePrefix."{{printVar(meta_fields)}} \n\n";
 		
 		$arrParams[] = $this->createChildParam("categoryMetaFields", null, array("raw_insert_text"=>$strText));
@@ -767,10 +767,15 @@ jQuery(document).ready(function(){
 	/**
 	 * check and add woo post params
 	 */
-	private function checkAddWooPostParams($postID, $arrParams){
+	private function checkAddWooPostParams($postID, $arrParams, $isForce = false){
 		
-		$arrKeys = UniteCreatorWooIntegrate::getWooKeysByPostID($postID);
 		
+		if(empty($postID) && $isForce == true)
+			$arrKeys = UniteCreatorWooIntegrate::getWooKeysNoPost();
+		else
+			$arrKeys = UniteCreatorWooIntegrate::getWooKeysByPostID($postID);
+		
+			
 		if(empty($arrKeys))
 			return($arrParams);
 		
@@ -781,6 +786,16 @@ jQuery(document).ready(function(){
 		foreach($arrKeys as $key){			
 			$arrParams[] = $this->createChildParam($key);
 		}
+		
+		return($arrParams);
+	}
+	
+	/**
+	 * add woo commerce post param without post id
+	 */
+	private function addWooPostParamsNoPostID($arrParams){
+		
+		$arrParams = $this->checkAddWooPostParams(null, $arrParams, true);
 		
 		return($arrParams);
 	}
@@ -842,8 +857,10 @@ jQuery(document).ready(function(){
 			$arrParams[] = $this->createChildParam_underscore(null);
 		
 		$arrSizes = $this->getArrImageThumbSizes();
-
+		
 		foreach($arrSizes as $size=>$desc){
+			
+			$size = str_replace("-", "_", $size);
 			
 			if($isSingle == false){
 				$key = "image_{$size}";
@@ -857,9 +874,10 @@ jQuery(document).ready(function(){
 			$thumbCode = "{{".self::PARAM_PREFIX."{$sap}$key}}\n";
 			$thumbCode .= "{{".self::PARAM_PREFIX."{$sap}{$key}_width}}\n";;
 			$thumbCode .= "{{".self::PARAM_PREFIX."{$sap}{$key}_height}}\n";;
-			
+						
 			$arrParams[] = $this->createChildParam_code("{{".self::PARAM_PREFIX."_".$key."}}", $thumbCode, false, true);
 		}
+		
 		
 		$prefix = "image_";
 		if($isSingle == true)
@@ -902,10 +920,18 @@ jQuery(document).ready(function(){
 		$arrParams = $this->getChildParams_post_addPostMeta($arrParams);
 		$arrParams = $this->getChildParams_post_putHtmlData($arrParams);
 		
+		$isWooAdded = false;
 		
-		if(!empty($postID))
+		if(!empty($postID)){
+			$numParams = count($arrParams);
 			$arrParams = $this->checkAddWooPostParams($postID, $arrParams);
-		
+			
+			$numParamsAfter = count($arrParams);
+			
+			if($numParamsAfter > $numParams)
+				$isWooAdded = true;
+		}
+			
 		$arrParams = $this->addPostImageChildParams($arrParams);
 		
 		
@@ -925,6 +951,12 @@ jQuery(document).ready(function(){
 					
 					if(!empty($postID))
 						$arrParams = $this->addCustomFieldsParams($arrParams, $postID);
+					
+				break;
+				case GlobalsProviderUC::POST_ADDITION_WOO:
+					
+					if($isWooAdded == false)
+						$arrParams = $this->addWooPostParamsNoPostID($arrParams);
 					
 				break;
 			}
@@ -970,7 +1002,14 @@ jQuery(document).ready(function(){
 		$strCode .= "	{# Also you can use the getTermMeta() #}\n\n";
 		
 		$strCode .= "	{% set meta_fields = getTermMeta({$itemName}.id) %}\n ";
-		$strCode .= "	{{ meta_fields.fieldname }}<br>\n\n ";
+		$strCode .= "	{{meta_fields.fieldname}}<br>\n\n ";
+		$strCode .= "	{{printVar(meta_fields)}}<br>\n\n ";
+		
+		$strCode .= "	{# Also you can use the getTermCustomFields() #}\n\n";
+		
+		$strCode .= "	{% set custom_fields = getTermCustomFields({$itemName}.id) %}\n ";
+		$strCode .= "	{{custom_fields.fieldname}}<br>\n\n ";
+		$strCode .= "	{{printVar(custom_fields)}}<br>\n\n ";
 		
 		$strCode .= "	<hr>\n";
 		

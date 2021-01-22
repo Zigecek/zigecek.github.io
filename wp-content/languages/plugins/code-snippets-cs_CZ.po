@@ -1,0 +1,1065 @@
+# Translation of Plugins - Code Snippets - Development (trunk) in Czech
+# This file is distributed under the same license as the Plugins - Code Snippets - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-01-04 20:15:44+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n >= 2 && n <= 4) ? 1 : 2);\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: cs_CZ\n"
+"Project-Id-Version: Plugins - Code Snippets - Development (trunk)\n"
+
+#. translators: %s: Human-readable time difference.
+#: php/class-list-table.php:343
+msgid "%s ago"
+msgstr "Před %s"
+
+#: php/class-list-table.php:345
+msgid "Y/m/d"
+msgstr "j. n. Y"
+
+#: php/class-list-table.php:367
+msgid "Modified"
+msgstr "Upraveno"
+
+#. translators: 1: search query, 2: line number
+#: php/class-list-table.php:1128
+msgid " for &ldquo;%1$s&rdquo; on line %2$d"
+msgstr " pro dotaz &ldquo;%1$s&rdquo; na řádku %2$d"
+
+#: php/class-upgrade.php:194
+msgid "Order snippets by date"
+msgstr "Řadit snippety dle data"
+
+#: php/class-upgrade.php:197
+msgid "Order snippets by last modification date by default in the snippets table."
+msgstr "Ve výchozím nastavení řadit snippety v seznamu dle data jejich poslední úpravy."
+
+#: php/class-validator.php:152
+msgid "Parse error: syntax error, unexpected end of snippet."
+msgstr "Chyba v parsování: syntax error, neočekávaný konec snippetu."
+
+#. translators: %s: PHP function name
+#: php/class-validator.php:167
+msgid "Cannot redeclare function %s."
+msgstr "Nelze znovu deklarovat funkci %s."
+
+#. translators: %s: PHP class name
+#: php/class-validator.php:171
+msgid "Cannot redeclare class %s."
+msgstr "Nelze znovu deklarovat třídu %s."
+
+#. translators: %s: PHP interface name
+#: php/class-validator.php:175
+msgid "Cannot redeclare interface %s."
+msgstr "Nelze znovu deklarovat rozhraní %s."
+
+#. translators: %s: PHP identifier name
+#: php/class-validator.php:179
+msgid "Cannot redeclare %s."
+msgstr "Nelze znovu deklarovat %s."
+
+#: php/class-validator.php:216
+msgid "Parse error: syntax error, unexpected end of snippet"
+msgstr "Chyba v parsování: syntax error, neočekávaný konec snippetu"
+
+#: php/admin-menus/class-manage-menu.php:142
+msgid "An error occurred when attempting to activate"
+msgstr "Při aktivaci snippetu nastala chyba"
+
+#. Author URI of the plugin
+msgid "https://codesnippets.pro"
+msgstr "https://codesnippets.pro"
+
+#. Author of the plugin
+msgid "Code Snippets Pro"
+msgstr "Code Snippets Pro"
+
+#: php/class-list-table.php:783
+msgid "No snippets were found matching the current search query. Please enter a new query or use the \"Clear Filters\" button above."
+msgstr "Nebyly nalezeny žádné snippety odpovídající daným kritériím. Prosím, zadejte jiný dotaz nebo použijte tlačítko 'Odstranit filtry' v horní části stránky."
+
+#: php/views/edit.php:90 php/admin-menus/class-edit-menu.php:608
+msgid "Save Changes"
+msgstr "Uložit změny"
+
+#: php/views/edit.php:91
+msgid "Save Snippet"
+msgstr "Uložit snippet"
+
+#: php/views/edit.php:96
+msgid "Execute Once"
+msgstr "Spustit jednou"
+
+#: php/views/edit.php:97
+msgid "Save Snippet and Execute Once"
+msgstr "Uložit snippet a spustit jej jednou"
+
+#: php/views/edit.php:105
+msgid "Save Snippet and Deactivate"
+msgstr "Uložit snippet a deaktivovat"
+
+#: php/views/edit.php:111
+msgid "Save Snippet and Activate"
+msgstr "Uložit snippet a aktivovat"
+
+#: php/views/edit.php:153
+msgctxt "keyboard key"
+msgid "S"
+msgstr "S"
+
+#: php/views/edit.php:161
+msgid "Save changes"
+msgstr "Uložit změny"
+
+#: php/class-contextual-help.php:58
+msgid "Snippets are similar to plugins - they both extend and expand the functionality of WordPress. Snippets are more light-weight, just a few lines of code, and do not put as much load on your server."
+msgstr "Snippety - kusy kódu - jsou podobné pluginům; oba mají možnost rozšiřovat funkcionalitu WordPressu. Snippety jsou jednodušší, pouze několik řádků kódu, čímž nezatěžují tolik procesorový čas serveru a znamenají rychlejší načítání vašeho webu."
+
+#: php/class-contextual-help.php:70
+msgid " Here you can manage your existing snippets and perform tasks on them such as activating, deactivating, deleting and exporting."
+msgstr " Zde můžete spravovat svoje již existující snippety a provádět s nimi různorodé akce, například jejich aktivaci, deaktivaci, smazání či export."
+
+#: php/class-contextual-help.php:90
+msgid " Here you can add a new snippet, or edit an existing one."
+msgstr " Zde můžete přidat nový snippet nebo upravit již existující."
+
+#: php/class-contextual-help.php:95
+msgid "CSS-Tricks"
+msgstr "Návrhy snippetů na CSS-Tricks (anglicky)"
+
+#: php/class-contextual-help.php:95
+msgid "https://css-tricks.com/snippets/wordpress/"
+msgstr "https://css-tricks.com/snippets/wordpress/"
+
+#: php/class-contextual-help.php:96
+msgid "WordPress Stack Exchange"
+msgstr "Sekce WordPressu na Stack Exchange (anglicky)"
+
+#: php/class-contextual-help.php:96
+msgid "https://wordpress.stackexchange.com/"
+msgstr "https://wordpress.stackexchange.com/"
+
+#: php/class-contextual-help.php:97
+msgid "WP Beginner"
+msgstr "WP Beginner (anglicky)"
+
+#: php/class-contextual-help.php:97
+msgid "https://www.wpbeginner.com/category/wp-tutorials/"
+msgstr "https://www.wpbeginner.com/category/wp-tutorials/"
+
+#: php/class-contextual-help.php:98
+msgid "GenerateWP"
+msgstr "GenerateWP (anglicky)"
+
+#: php/class-contextual-help.php:98
+msgid "https://generatewp.com"
+msgstr "https://generatewp.com"
+
+#: php/class-contextual-help.php:134
+msgid " Here you can load snippets from a code snippets export file into the database alongside existing snippets."
+msgstr " Zde můžete načíst snippety ze souboru exportu pluginu Code snippets do databáze mezi ostatní, již vytvořené snippety."
+
+#: php/class-upgrade.php:186
+msgid "Order snippets by name"
+msgstr "Řadit snippety dle názvu"
+
+#: php/class-upgrade.php:188
+msgid "Order snippets by name by default in the snippets table."
+msgstr "Ve výchozím nastavení řadit snippety v seznamu dle názvu."
+
+#: php/admin-menus/class-edit-menu.php:23
+msgctxt "menu label"
+msgid "Edit Snippet"
+msgstr "Upravit snippet"
+
+#: php/views/edit.php:140
+msgctxt "help tooltip"
+msgid "?"
+msgstr "?"
+
+#: php/views/edit.php:145
+msgctxt "keyboard key"
+msgid "Cmd"
+msgstr "Cmd"
+
+#: php/views/edit.php:146
+msgctxt "keyboard key"
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: php/views/edit.php:147
+msgctxt "keyboard key"
+msgid "Shift"
+msgstr "Shift"
+
+#: php/views/edit.php:148
+msgctxt "keyboard key"
+msgid "Option"
+msgstr "Option"
+
+#: php/views/edit.php:149
+msgctxt "keyboard key"
+msgid "Alt"
+msgstr "Alt"
+
+#: php/views/edit.php:150
+msgctxt "keyboard key"
+msgid "F"
+msgstr "F"
+
+#: php/views/edit.php:151
+msgctxt "keyboard key"
+msgid "G"
+msgstr "G"
+
+#: php/views/edit.php:152
+msgctxt "keyboard key"
+msgid "R"
+msgstr "R"
+
+#: php/views/edit.php:168
+msgid "Begin searching"
+msgstr "Začít hledat"
+
+#: php/views/edit.php:175
+msgid "Find next"
+msgstr "Najít další"
+
+#: php/views/edit.php:181
+msgid "Find previous"
+msgstr "Najít předchozí"
+
+#: php/views/edit.php:187
+msgid "Replace"
+msgstr "Nahradit"
+
+#: php/views/edit.php:193
+msgid "Replace all"
+msgstr "Nahradit vše"
+
+#: php/views/edit.php:199
+msgid "Persistent search"
+msgstr "Hledat ve smyčce"
+
+#: php/views/import.php:26 php/views/edit.php:47
+#: php/admin-menus/class-settings-menu.php:87
+msgctxt "snippets"
+msgid "Manage"
+msgstr "Spravovat"
+
+#: php/views/import.php:37 php/views/edit.php:59 php/views/manage.php:37
+msgctxt "snippets"
+msgid "Settings"
+msgstr "Nastavení"
+
+#: php/admin-menus/class-manage-menu.php:92
+msgctxt "tools submenu label"
+msgid "Snippets"
+msgstr "Snippety"
+
+#. translators: %s: search query
+#: php/class-list-table.php:1135
+msgid " for &ldquo;%s&rdquo;"
+msgstr " pro dotaz &ldquo;%s&rdquo;"
+
+#. translators: %s: tag name
+#: php/class-list-table.php:1141
+msgid " in tag &ldquo;%s&rdquo;"
+msgstr " s tagem &ldquo;%s&rdquo;"
+
+#: php/views/edit.php:52 php/views/manage.php:29
+#: php/admin-menus/class-settings-menu.php:97
+msgctxt "snippets"
+msgid "Import"
+msgstr "Import"
+
+#: php/views/import.php:89
+msgid "Upload Files"
+msgstr "Nahrání snippetů"
+
+#: php/class-list-table.php:162 php/class-list-table.php:413
+msgid "Clone"
+msgstr "Duplikovat"
+
+#: php/class-list-table.php:368 php/admin-menus/class-edit-menu.php:388
+msgid "Priority"
+msgstr "Priorita"
+
+#: php/class-list-table.php:786
+msgid "It looks like you don't have any snippets."
+msgstr "Vypadá to, že nemáte žádné snippety."
+
+#: php/class-upgrade.php:149
+msgid "You can remove it, or edit it to add your own content."
+msgstr "Můžete jej odstranit, nebo upravit přidáním vlastního obsahu."
+
+#: php/class-upgrade.php:154
+msgid "Example HTML shortcode"
+msgstr "Příklad HTML shortcode"
+
+#: php/class-upgrade.php:157
+msgid "write your HTML shortcode content here"
+msgstr "sem vepište svůj HTML shortcode"
+
+#: php/class-upgrade.php:159
+msgid "This is an example snippet for demonstrating how to add an HTML shortcode."
+msgstr "Toto je příklad snippetu pro ukázku přidání HTML shortcode."
+
+#: php/class-upgrade.php:164
+msgid "Example CSS snippet"
+msgstr "Příklad CSS snippetu"
+
+#: php/class-upgrade.php:167
+msgid "write your CSS code here"
+msgstr "sem vepište svůj kód CSS"
+
+#: php/class-upgrade.php:169
+msgid "This is an example snippet for demonstrating how to add custom CSS code to your website."
+msgstr "Toto je příklad snippetu pro ukázku přidání vlastního CSS na váš web."
+
+#: php/class-upgrade.php:175
+msgid "Example JavaScript snippet"
+msgstr "Příklad JavaScript snippetu"
+
+#: php/class-upgrade.php:178
+msgid "write your JavaScript code here"
+msgstr "sem vepište svůj vlastní JavaScript"
+
+#: php/class-upgrade.php:180
+msgid "This is an example snippet for demonstrating how to add custom JavaScript code to your website."
+msgstr "Toto je příklad snippetu pro ukázku přidání vlastního JavaScriptu na váš web."
+
+#: php/admin-menus/class-edit-menu.php:387
+msgid "Snippets with a lower priority number will run before those with a higher number."
+msgstr "Snippety s nižší hodnotou priority budou spuštěny před těmi s vyšší."
+
+#: php/admin-menus/class-manage-menu.php:168
+msgid "Snippet <strong>cloned</strong>."
+msgstr "Snippet byl <strong>duplikován</strong>."
+
+#: php/admin-menus/class-manage-menu.php:169
+msgid "Selected snippets <strong>cloned</strong>."
+msgstr "Vybrané snippety byly <strong>duplikovány</strong>."
+
+#: php/admin-menus/class-settings-menu.php:38
+msgid "All settings have been reset to their defaults."
+msgstr "Veškerá nastavení byla obnovena do výchozího stavu."
+
+#: php/admin-menus/class-settings-menu.php:118
+msgid "Reset to Default"
+msgstr "Obnovit nastavení"
+
+#. translators: %s: URL for Plugins admin menu
+#: php/settings/settings-fields.php:81
+msgid "When the plugin is deleted from the <a href=\"%s\">Plugins</a> menu, also delete all snippets and plugin settings."
+msgstr "Pokud bude plugin odstraněn z menu <a href=\"%s\">Pluginy</a>, odstranit také všechny snippety a nastavení pluginu."
+
+#: php/settings/settings-fields.php:77
+msgid "Complete Uninstall"
+msgstr "Úplná odinstalace"
+
+#: php/views/import.php:60
+msgid "Duplicate Snippets"
+msgstr "Duplikáty"
+
+#: php/admin-menus/class-import-menu.php:127
+msgid "No snippets were imported."
+msgstr "Nebyly naimportovány žádné snippety."
+
+#: php/class-admin.php:69
+msgid "Snippets &raquo; Settings"
+msgstr "Nastavení snippetů"
+
+#: php/class-list-table.php:201
+msgid "Run Once"
+msgstr "Spustit jednou"
+
+#: php/class-list-table.php:414 php/admin-menus/class-edit-menu.php:632
+msgid "Download"
+msgstr "Stáhnout"
+
+#: php/admin-menus/class-edit-menu.php:524
+msgid "Snippet <strong>added</strong> and <strong>executed</strong>."
+msgstr "Snippet byl <strong>přidán</strong> a <strong>spuštěn</strong>."
+
+#: php/admin-menus/class-edit-menu.php:612
+msgid "Save Changes and Execute Once"
+msgstr "Uložit změny a spustit jednou"
+
+#: php/admin-menus/class-manage-menu.php:161
+msgid "Snippet <strong>executed</strong>."
+msgstr "Snippet byl <strong>spuštěn</strong>."
+
+#: php/views/import.php:47
+msgid "Upload one or more Code Snippets export files and the snippets will be imported."
+msgstr "Nahrajte jeden nebo více souborů exportu pluginu Code snippets a vaše snippety budou naimportovány."
+
+#: php/views/import.php:63
+msgid "What should happen if an existing snippet is found with an identical name to an imported snippet?"
+msgstr "Co se má stát, pokud bude nalezen existující snippet s identickým názvem, jako má jeden z těch právě importovaných?"
+
+#: php/views/import.php:70
+msgid "Ignore any duplicate snippets: import all snippets from the file regardless and leave all existing snippets unchanged."
+msgstr "Ingorovat všechny duplikáty; importovat veškeré snippety ze souboru nehledě na název a všechny již existující ponechat beze změny."
+
+#: php/views/import.php:77
+msgid "Replace any existing snippets with a newly imported snippet of the same name."
+msgstr "Nahradit existující snippet nově importovaným se stejným názvem."
+
+#: php/views/import.php:84
+msgid "Do not import any duplicate snippets; leave all existing snippets unchanged."
+msgstr "Neimportovat žádné duplikáty; ponechat všechny existující snippety beze změny."
+
+#: php/views/import.php:92
+msgid "Choose one or more Code Snippets (.xml or .json) files to upload, then click \"Upload files and import\"."
+msgstr "Vyberte jeden či více souborů exportu pluginu Code Snippets (ve formátu .xml či .json), poté klikněte na 'Nahrát soubory a importovat'."
+
+#: php/admin-menus/class-edit-menu.php:408
+msgid "Only run once"
+msgstr "Spustit pouze jednou"
+
+#: php/admin-menus/class-edit-menu.php:432
+msgid "Sharing Settings"
+msgstr "Nastavení sdílení"
+
+#: php/class-contextual-help.php:94
+msgid "WP Function Me"
+msgstr "WP Function Me"
+
+#: php/class-contextual-help.php:94
+msgid "https://www.wpfunction.me"
+msgstr "https://www.wpfunction.me (anglicky)"
+
+#: php/class-contextual-help.php:110
+msgid "Here are some links to websites which host a large number of snippets that you can add to your site:"
+msgstr "Zde je několik odkazů na stránky, na kterých najdete velké množství snippetů, jež si můžete přidat na svůj web:"
+
+#: php/class-list-table.php:153
+msgid "Network Active"
+msgstr "Aktivní v síti webů"
+
+#: php/class-list-table.php:155
+msgid "Network Only"
+msgstr "Pouze v síti webů"
+
+#: php/class-list-table.php:790
+msgid "Perhaps you would like to add a new one?"
+msgstr "Možná byste chtěli nějaký přidat?"
+
+#: php/class-list-table.php:176
+msgid "You are about to permanently delete the selected item."
+msgstr "Právě se chystáte trvale odstranit danou položku."
+
+#: php/class-list-table.php:177 php/admin-menus/class-edit-menu.php:664
+msgid "'Cancel' to stop, 'OK' to delete."
+msgstr "Výběrem 'Zrušit' vrátíte akci zpět, výběrem 'OK' položku nenávratně odstraníte."
+
+#: php/admin-menus/class-edit-menu.php:50
+msgctxt "menu label"
+msgid "Add New"
+msgstr "Přidat nový"
+
+#: php/admin-menus/class-edit-menu.php:663
+msgid "You are about to permanently delete this snippet."
+msgstr "Chystáte se trvale odstranit tento snippet."
+
+#: php/admin-menus/class-import-menu.php:15
+msgctxt "menu label"
+msgid "Import"
+msgstr "Import"
+
+#: php/admin-menus/class-manage-menu.php:22
+msgctxt "menu label"
+msgid "All Snippets"
+msgstr "Všechny snippety"
+
+#: php/admin-menus/class-manage-menu.php:53
+msgctxt "top-level menu label"
+msgid "Snippets"
+msgstr "Snippety"
+
+#: php/admin-menus/class-settings-menu.php:16
+msgctxt "menu label"
+msgid "Settings"
+msgstr "Nastavení"
+
+#: php/views/edit.php:81
+msgid "Enter title here"
+msgstr "Zde vložte název snippetu"
+
+#: php/class-admin.php:209
+msgid "Dismiss"
+msgstr "Odmítnout"
+
+#: php/class-contextual-help.php:49
+msgid "Plugin Website"
+msgstr "Stránky pluginu"
+
+#: php/settings/settings-fields.php:70
+msgid "Disable Shortcode Syntax Highlighter"
+msgstr "Vypnout zvýrazňování syntaxe u shortcode"
+
+#: php/settings/settings-fields.php:72
+msgid "Disable the syntax highlighting for the [code_snippet] shortcode on the front-end"
+msgstr "Vypnout zvýrazňování syntaxe pro shortcode [code_snippet] na front-endu."
+
+#: php/admin-menus/class-edit-menu.php:193
+msgid "If you prefer, you can close this page and discard the changes you just made. No changes will be made to this site."
+msgstr "Pokud chcete, můžete tuto stránku zavřít a zahodit změny, které jste právě provedli. Žádné změny na všem webu se neprovedou."
+
+#. translators: %d: line of file where error originated
+#: php/admin-menus/class-edit-menu.php:503
+msgid "The snippet has been deactivated due to an error on line %d:"
+msgstr "Tento snippet byl deaktivován z důvodu chyby na řádku %d:"
+
+#: php/admin-menus/class-edit-menu.php:508
+msgid "The snippet has been deactivated due to an error in the code."
+msgstr "Tento snippet byl deaktivován z důvodu chyby v kódu."
+
+#: php/admin-menus/class-edit-menu.php:187
+msgid "Don't Panic"
+msgstr "Nepanikařte"
+
+#. translators: %d: line where error was produced
+#: php/admin-menus/class-edit-menu.php:189
+msgid "The code snippet you are trying to save produced a fatal error on line %d:"
+msgstr "Snippet, který se pokoušíte uložit, způsobil fatální chybu (fatal error) na řádku %d:"
+
+#: php/admin-menus/class-edit-menu.php:191
+msgid "The previous version of the snippet is unchanged, and the rest of this site should be functioning normally as before."
+msgstr "Předešlá verze snippetu je nezměněná a zbytek stránky by měl fungovat v pořádku jako doposud."
+
+#: php/admin-menus/class-edit-menu.php:192
+msgid "Please use the back button in your browser to return to the previous page and try to fix the code error."
+msgstr "Použijte prosím tlačítko zpět ve vašem prohlížeči pro návrat na předchozí stránku a zkuste chybu v kódu upravit."
+
+#. Description of the plugin
+msgid "An easy, clean and simple way to run code snippets on your site. No need to edit to your theme's functions.php file again!"
+msgstr "Snadný, čistý a jednoduchý způsob, jak spustit vlastní snippety (kusy kódu) na vašem webu. Nebudete nikdy více muset upravovat soubor functions.php vaší šablony!"
+
+#: php/class-admin.php:128
+msgid "Manage your existing snippets"
+msgstr "Spravujte svoje již existující snippety"
+
+#: php/class-admin.php:159
+msgid "Visit the WordPress.org plugin page"
+msgstr "Navštívit stránku pluginu"
+
+#: php/class-admin.php:160
+msgid "About"
+msgstr "Více informací"
+
+#: php/class-admin.php:164
+msgid "Visit the support forums"
+msgstr "Navštívit fórum podpory"
+
+#: php/class-admin.php:165
+msgid "Support"
+msgstr "Podpořit"
+
+#: php/class-admin.php:169
+msgid "Support this plugin's development"
+msgstr "Podpořte vývoj tohoto pluginu"
+
+#: php/class-admin.php:170
+msgid "Donate"
+msgstr "Přispět"
+
+#: php/class-admin.php:202
+msgid "<strong>Have feedback on Code Snippets?</strong> Please take the time to answer a short survey on how you use this plugin and what you'd like to see changed or added in the future."
+msgstr "<strong>Sdělíte nám svoji zpětnou vazbu?</strong> Prosím, věnujte chvíli Vašeho drahocenného času vyplněním dotazníku ohledně toho, jak tento plugin využíváte a co byste byli rádi, abychom změnili či přidali do budoucna."
+
+#: php/class-admin.php:206
+msgid "Take the survey now"
+msgstr "Vyplnit dotazník"
+
+#: php/class-contextual-help.php:45
+msgid "For more information:"
+msgstr "Pro více informací:"
+
+#: php/class-contextual-help.php:46
+msgid "About Plugin"
+msgstr "O pluginu"
+
+#: php/class-contextual-help.php:48
+msgid "Support Forum"
+msgstr "Fórum podpory"
+
+#: php/class-contextual-help.php:68 php/class-contextual-help.php:89
+#: php/class-contextual-help.php:132
+msgid "Overview"
+msgstr "Přehled"
+
+#: php/class-contextual-help.php:75
+msgid "Safe Mode"
+msgstr "Bezpečný režim"
+
+#: php/class-contextual-help.php:77
+msgid "Be sure to check your snippets for errors before you activate them, as a faulty snippet could bring your whole blog down. If your site starts doing strange things, deactivate all your snippets and activate them one at a time."
+msgstr "Pro jistotu vždy zkontrolujte snippety před tím, než je aktivujete, jelikož i jediná chyba v kódu může způsobit nefunkčnost celého vašeho webu. Pokud se stránka začne chovat divně, deaktivujte všechny Vaše snippety a postupně je znovu jeden po druhém aktivujte."
+
+#: php/class-contextual-help.php:78
+msgid "If something goes wrong with a snippet and you can't use WordPress, you can cause all snippets to stop executing by adding <code>define('CODE_SNIPPETS_SAFE_MODE', true);</code> to your <code>wp-config.php</code> file. After you have deactivated the offending snippet, you can turn off safe mode by removing this line or replacing <strong>true</strong> with <strong>false</strong>."
+msgstr "Pokud se s Vaším snippetem něco stane a Vy nebudete schopni používat WordPress, můžete okamžitě deaktivovat spouštění veškerých snippetů přidáním <code>define('CODE_SNIPPETS_SAFE_MODE', true);</code> do vašeho souboru <code>wp-config.php</code>. Po úspěšné deaktivaci problémového snippetu můžete bezpečný režim vypnout odstraněním tohoto řádku nebo prostou změnou hodnoty <strong>true</strong> na <strong>false</strong>."
+
+#: php/class-contextual-help.php:108
+msgid "Finding Snippets"
+msgstr "Hledání snippetů"
+
+#: php/class-contextual-help.php:112
+msgid "More places to find snippets, as well as a selection of example snippets, can be found in the <a href=\"https://github.com/sheabunge/code-snippets/wiki/Finding-snippets\">plugin documentation</a>."
+msgstr "Další odkazy, stejně jako výběr některých příkladů snippetů, najdete v <a href=\"https://github.com/sheabunge/code-snippets/wiki/Finding-snippets\">dokumentaci pluginu</a>."
+
+#: php/class-contextual-help.php:117
+msgid "Adding Snippets"
+msgstr "Přidání snippetů"
+
+#: php/class-contextual-help.php:119
+msgid "You need to fill out the name and code fields for your snippet to be added. While the description field will add more information about how your snippet works, what is does and where you found it, it is completely optional."
+msgstr "Pro přidání snippetu je třeba vyplnit pole s názvem a kódem. Přestože pole popisu přidá další informace o tom, jak váš snippet funguje, co dělá a kde jste ho našli, je zcela nepovinné."
+
+#: php/class-contextual-help.php:120
+msgid "Please be sure to check that your snippet is valid PHP code and will not produce errors before adding it through this page. While doing so will not become active straight away, it will help to minimise the chance of a faulty snippet becoming active on your site."
+msgstr "Ujistěte se prosím, že váš snippet je platný kód PHP a nebude způsobovat problémy před přidáním na této stránce. I když se tímto automaticky neaktivuje, pomůže to minimalizovat možnost, že se vadný snippet stane aktivním na vašem webu."
+
+#: php/class-contextual-help.php:139
+msgid "Importing"
+msgstr "Importování"
+
+#: php/class-contextual-help.php:141
+msgid "You can load your snippets from a code snippets export file using this page."
+msgstr "Zde můžete nahrát vaše snippety ze souboru exportu pluginu Code snippets."
+
+#. translators: %s: URL to Snippets admin menu
+#: php/class-contextual-help.php:143
+msgid "Imported snippets will be added to the database along with your existing snippets. Regardless of whether the snippets were active on the previous site, imported snippets are always inactive until activated using the <a href=\"%s\">Manage Snippets</a> page."
+msgstr "Importované snippety budou přidány do databáze mezi vaše již vytvořené snippety. Nehledě na to, zda byly importované snippety na jiné stránce aktivní, budou tyto vždy nastaveny jako neaktivní, dokud je neaktivujete pomocí stránky <a href=\"%s\">Spravovat snippety</a>."
+
+#: php/class-contextual-help.php:148
+msgid "Exporting"
+msgstr "Exportování"
+
+#. translators: %s: URL to Manage Snippets admin menu
+#: php/class-contextual-help.php:150
+msgid "You can save your snippets to a code snippets export file using the <a href=\"%s\">Manage Snippets</a> page."
+msgstr "Vaše snippety si můžete exportovat do souboru na stránce <a href=\"%s\">Spravovat snippety</a>."
+
+#: php/class-list-table.php:58
+msgid "Snippets per page"
+msgstr "Počet snippetů na stránku"
+
+#: php/class-list-table.php:161
+msgid "Edit"
+msgstr "Upravit"
+
+#: php/class-list-table.php:163 php/class-list-table.php:415
+#: php/admin-menus/class-edit-menu.php:635
+msgid "Export"
+msgstr "Exportovat"
+
+#: php/class-list-table.php:172 php/class-list-table.php:416
+#: php/admin-menus/class-edit-menu.php:636
+msgid "Delete"
+msgstr "Odstranit"
+
+#: php/class-list-table.php:206 php/class-list-table.php:412
+msgid "Network Deactivate"
+msgstr "Deaktivovat v síti webů"
+
+#: php/class-list-table.php:206 php/class-list-table.php:411
+msgid "Network Activate"
+msgstr "Aktivovat v síti webů"
+
+#: php/views/edit.php:104 php/class-list-table.php:207
+#: php/class-list-table.php:412 php/admin-menus/class-manage-menu.php:141
+msgid "Deactivate"
+msgstr "Deaktivovat"
+
+#: php/views/edit.php:110 php/class-list-table.php:207
+#: php/class-list-table.php:411 php/admin-menus/class-manage-menu.php:140
+msgid "Activate"
+msgstr "Aktivovat"
+
+#. translators: %d: snippet identifier
+#: php/class-list-table.php:230
+msgid "Untitled #%d"
+msgstr "Nepojmenovaný snippet #%d"
+
+#: php/class-list-table.php:254
+msgid "Shared on Network"
+msgstr "Sdíleno v síti webů"
+
+#: php/views/edit.php:80 php/class-list-table.php:363
+msgid "Name"
+msgstr "Název"
+
+#: php/class-list-table.php:364
+msgid "ID"
+msgstr "ID"
+
+#. translators: %s: total number of snippets
+#: php/class-list-table.php:458
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] "Všechny <span class=\"count\">(%s)</span>"
+msgstr[1] "Všechny <span class=\"count\">(%s)</span>"
+msgstr[2] "Všechny <span class=\"count\">(%s)</span>"
+
+#. translators: %s: total number of active snippets
+#: php/class-list-table.php:461
+msgid "Active <span class=\"count\">(%s)</span>"
+msgid_plural "Active <span class=\"count\">(%s)</span>"
+msgstr[0] "Aktivní <span class=\"count\">(%s)</span>"
+msgstr[1] "Aktivní <span class=\"count\">(%s)</span>"
+msgstr[2] "Aktivní <span class=\"count\">(%s)</span>"
+
+#. translators: %s: total number of inactive snippets
+#: php/class-list-table.php:464
+msgid "Inactive <span class=\"count\">(%s)</span>"
+msgid_plural "Inactive <span class=\"count\">(%s)</span>"
+msgstr[0] "Neaktivní <span class=\"count\">(%s)</span>"
+msgstr[1] "Neaktivní <span class=\"count\">(%s)</span>"
+msgstr[2] "Neaktivní <span class=\"count\">(%s)</span>"
+
+#. translators: %s: total number of recently activated snippets
+#: php/class-list-table.php:467
+msgid "Recently Active <span class=\"count\">(%s)</span>"
+msgid_plural "Recently Active <span class=\"count\">(%s)</span>"
+msgstr[0] "Nedávno aktivní <span class=\"count\">(%s)</span>"
+msgstr[1] "Nedávno aktivní <span class=\"count\">(%s)</span>"
+msgstr[2] "Nedávno aktivní <span class=\"count\">(%s)</span>"
+
+#: php/class-list-table.php:536
+msgid "Show all tags"
+msgstr "Zobrazit všechny tagy"
+
+#: php/class-list-table.php:550
+msgid "Filter"
+msgstr "Filtr"
+
+#: php/class-list-table.php:558
+msgid "Clear List"
+msgstr "Prázdný seznam"
+
+#: php/class-list-table.php:1120
+msgid "Search results"
+msgstr "Výsledky vyhledávání"
+
+#: php/class-list-table.php:1149
+msgid "Clear Filters"
+msgstr "Odstranit filtry"
+
+#: php/views/import.php:31 php/views/edit.php:36 php/views/manage.php:24
+#: php/admin-menus/class-settings-menu.php:92
+msgctxt "snippet"
+msgid "Add New"
+msgstr "Přidat nový"
+
+#: php/admin-menus/class-edit-menu.php:617
+msgid "Save Changes and Deactivate"
+msgstr "Uložit změny a deaktivovat"
+
+#: php/admin-menus/class-edit-menu.php:619
+msgid "Save Changes and Activate"
+msgstr "Uložit změny a aktivovat"
+
+#: php/admin-menus/class-manage-menu.php:165
+msgid "Selected snippets <strong>deactivated</strong>."
+msgstr "Vybrané snippety byly <strong>deaktivovány</strong>."
+
+#: php/admin-menus/class-manage-menu.php:166
+msgid "Snippet <strong>deleted</strong>."
+msgstr "Snippet byl <strong>odstraněn</strong>."
+
+#: php/admin-menus/class-manage-menu.php:167
+msgid "Selected snippets <strong>deleted</strong>."
+msgstr "Vybrané snippety byly <strong>odstraněny</strong>."
+
+#: php/admin-menus/class-settings-menu.php:17
+msgid "Snippets Settings"
+msgstr "Nastavení snippetů"
+
+#: php/admin-menus/class-settings-menu.php:82
+msgid "Settings"
+msgstr "Nastavení"
+
+#: php/settings/settings.php:209 php/admin-menus/class-settings-menu.php:144
+msgid "Settings saved."
+msgstr "Nastavení uloženo."
+
+#: php/settings/settings-fields.php:42
+msgid "Activate by Default"
+msgstr "Ve výchozím stavu aktivovat"
+
+#: php/settings/settings-fields.php:44
+msgid "Make the 'Save and Activate' button the default action when saving a snippet."
+msgstr "Nastavit tlačítko 'Uložit a aktivovat' jako výchozí akci při ukládání snippetu."
+
+#: php/settings/settings-fields.php:56
+msgid "Enable Snippet Tags"
+msgstr "Povolit u snippetů tagy"
+
+#: php/settings/settings-fields.php:63
+msgid "Enable Snippet Descriptions"
+msgstr "Povolit u snippetů popis"
+
+#: php/settings/settings-fields.php:96
+msgid "Row Height"
+msgstr "Výška řádku"
+
+#: php/settings/settings-fields.php:98
+msgid "rows"
+msgstr "řádků"
+
+#: php/settings/settings-fields.php:104
+msgid "Use Full Editor"
+msgstr "Používat plnohodnotný editor"
+
+#: php/settings/settings-fields.php:111
+msgid "Media Buttons"
+msgstr "Tlačítka médií"
+
+#: php/settings/settings-fields.php:129
+msgid "Indent With Tabs"
+msgstr "Odsazovat s tabulátory"
+
+#: php/settings/settings-fields.php:131
+msgid "Use hard tabs (not spaces) for indentation."
+msgstr "Používat tabulátory (namísto mezer) pro odsazování."
+
+#: php/settings/settings-fields.php:137
+msgid "Tab Size"
+msgstr "Velikost tabulátoru"
+
+#: php/settings/settings-fields.php:139
+msgid "The width of a tab character."
+msgstr "Šířka znaku tabulátoru."
+
+#: php/settings/settings-fields.php:146
+msgid "Indent Unit"
+msgstr "Velikost odsazení"
+
+#: php/settings/settings-fields.php:148
+msgid "How many spaces a block should be indented."
+msgstr "O kolik mezer má být blok odsazený."
+
+#: php/settings/settings-fields.php:155
+msgid "Wrap Lines"
+msgstr "Zalamování řádků"
+
+#: php/settings/settings-fields.php:157
+msgid "Whether the editor should scroll or wrap for long lines."
+msgstr "Zalamovat řádky namísto zobrazení posuvníku."
+
+#: php/settings/settings-fields.php:163
+msgid "Line Numbers"
+msgstr "Čísla řádků"
+
+#: php/settings/settings-fields.php:165
+msgid "Show line numbers to the left of the editor."
+msgstr "Ukazovat čísla řádků po levém okraji editoru."
+
+#: php/settings/settings-fields.php:171
+msgid "Auto Close Brackets"
+msgstr "Uzavírání závorek"
+
+#: php/settings/settings-fields.php:173
+msgid "Auto-close brackets and quotes when typed."
+msgstr "Automaticky uzavírat závorky a uvozovky při psaní."
+
+#: php/settings/settings-fields.php:179
+msgid "Highlight Selection Matches"
+msgstr "Zvýraznění shody s výběrem"
+
+#: php/settings/settings-fields.php:180
+msgid "Highlight all instances of a currently selected word."
+msgstr "Zvýrazňovat shody s aktuálně označeným slovem."
+
+#: php/settings/settings.php:92
+msgid "General"
+msgstr "Obecné"
+
+#: php/settings/settings.php:93
+msgid "Description Editor"
+msgstr "Editor popisu"
+
+#: php/settings/settings.php:94
+msgid "Code Editor"
+msgstr "Editor kódu"
+
+#: php/settings/settings.php:151
+msgid "Editor Preview"
+msgstr "Náhled editoru"
+
+#: php/views/edit.php:127
+msgid "Code"
+msgstr "Kód"
+
+#. translators: %s: link to snippets admin menu
+#: php/views/import.php:52
+msgid "Afterwards, you will need to visit the <a href=\"%s\">All Snippets</a> page to activate the imported snippets."
+msgstr "Následně navštivte stránku <a href=\"%s\">seznamu vašich snippetů</a> pro jejich aktivaci."
+
+#: php/views/import.php:97
+msgid "Choose files from your computer:"
+msgstr "Vyberte soubory z vašeho počítače:"
+
+#. translators: %s: size in bytes
+#: php/views/import.php:100
+msgid "(Maximum size: %s)"
+msgstr "(Maximální velikost nesmí přesáhnout %s)"
+
+#: php/views/import.php:111
+msgid "Upload files and import"
+msgstr "Nahrát soubory a importovat"
+
+#: php/class-contextual-help.php:47
+msgid "FAQ"
+msgstr "Nejčastější dotazy"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/sheabunge/code-snippets"
+msgstr "https://github.com/sheabunge/code-snippets"
+
+#: php/settings/settings-fields.php:122
+msgid "Theme"
+msgstr "Šablona"
+
+#: php/views/manage.php:50
+msgid "Search Installed Snippets"
+msgstr "Prohledat nainstalované snippety"
+
+#: php/settings/settings-fields.php:106
+msgid "Enable all features of the visual editor"
+msgstr "Povolit všechny prvky vizuálního editoru"
+
+#: php/settings/settings-fields.php:65
+msgid "Show snippet descriptions on admin pages"
+msgstr "Zobrazovat v administraci snippetů jejich popis."
+
+#: php/settings/settings-fields.php:58
+msgid "Show snippet tags on admin pages"
+msgstr "Zobrazovat v administraci snippetů jejich tagy."
+
+#: php/settings/settings-fields.php:113
+msgid "Enable the add media buttons"
+msgstr "Povolit tlačítka pro přidání médií."
+
+#. Plugin Name of the plugin
+#: php/admin-menus/class-import-menu.php:104
+msgid "Code Snippets"
+msgstr "Code Snippets"
+
+#: php/class-admin.php:68 php/class-admin.php:129 php/views/manage.php:21
+#: php/admin-menus/class-manage-menu.php:23
+#: php/admin-menus/class-manage-menu.php:52
+#: php/admin-menus/class-manage-menu.php:91
+msgid "Snippets"
+msgstr "Snippety"
+
+#: php/class-list-table.php:365 php/admin-menus/class-edit-menu.php:336
+msgid "Description"
+msgstr "Popis"
+
+#: php/class-list-table.php:366 php/admin-menus/class-edit-menu.php:369
+msgid "Tags"
+msgstr "Tagy"
+
+#: php/admin-menus/class-admin-menu.php:124
+msgid "You are not authorized to access this page."
+msgstr "Nemáte oprávnění přístupu k této stránce."
+
+#: php/views/edit.php:33 php/admin-menus/class-edit-menu.php:24
+msgid "Edit Snippet"
+msgstr "Upravit snippet"
+
+#: php/views/edit.php:39 php/admin-menus/class-edit-menu.php:51
+msgid "Add New Snippet"
+msgstr "Přidat nový snippet"
+
+#: php/admin-menus/class-edit-menu.php:374
+msgid "Enter a list of tags; separated by commas"
+msgstr "Zadejte seznam tagů, oddělený čárkami"
+
+#: php/admin-menus/class-edit-menu.php:436
+msgid "Allow this snippet to be activated on individual sites on the network"
+msgstr "Povolit tomuto snippetu aktivaci na více webech v síti"
+
+#: php/admin-menus/class-edit-menu.php:515
+msgid "An error occurred when saving the snippet."
+msgstr "Při ukládání snippetu nastala chyba."
+
+#: php/admin-menus/class-edit-menu.php:521
+msgid "Snippet <strong>added</strong>."
+msgstr "Snippet byl <strong>přidán</strong>."
+
+#: php/admin-menus/class-edit-menu.php:522
+msgid "Snippet <strong>updated</strong>."
+msgstr "Snippet byl <strong>aktivován</strong>."
+
+#: php/admin-menus/class-edit-menu.php:523
+msgid "Snippet <strong>added</strong> and <strong>activated</strong>."
+msgstr "Snippet byl <strong>přidán</strong> a <strong>aktivován</strong>."
+
+#: php/admin-menus/class-edit-menu.php:525
+msgid "Snippet <strong>updated</strong> and <strong>activated</strong>."
+msgstr "Snippet byl <strong>aktualizován</strong> a <strong>aktivován</strong>."
+
+#: php/admin-menus/class-edit-menu.php:526
+msgid "Snippet <strong>updated</strong> and <strong>deactivated</strong>."
+msgstr "Snippet byl <strong>aktualizován</strong> a <strong>deaktivován</strong>."
+
+#: php/views/import.php:19 php/admin-menus/class-import-menu.php:16
+msgid "Import Snippets"
+msgstr "Importovat snippety"
+
+#: php/admin-menus/class-import-menu.php:105
+msgid "Import snippets from a code snippets export file"
+msgstr "Importovat snippety ze souboru exportu Code Snippets"
+
+#: php/admin-menus/class-import-menu.php:117
+msgid "An error occurred when processing the import files."
+msgstr "Při zpracování souboru nastala chyba."
+
+#. translators: 1: amount of snippets imported, 2: link to Snippets menu
+#: php/admin-menus/class-import-menu.php:133
+msgid "Successfully imported <strong>%1$d</strong> snippet. <a href=\"%2$s\">Have fun!</a>"
+msgid_plural "Successfully imported <strong>%1$d</strong> snippets. <a href=\"%2$s\">Have fun!</a>"
+msgstr[0] "Úspěšně naimportován <strong>%1$d</strong> snippet. <a href=\"%2$s\">Bavte se!</a>"
+msgstr[1] "Úspěšně naimportovány <strong>%1$d</strong> snippety. <a href=\"%2$s\">Bavte se!</a>"
+msgstr[2] "Úspěšně naimportováno <strong>%1$d</strong> snippetů. <a href=\"%2$s\">Bavte se!</a>"
+
+#: php/admin-menus/class-manage-menu.php:155
+msgid "<strong>Warning:</strong> Safe mode is active and snippets will not execute! Remove the <code>CODE_SNIPPETS_SAFE_MODE</code> constant from <code>wp-config.php</code> to turn off safe mode. <a href=\"https://github.com/sheabunge/code-snippets/wiki/Safe-Mode\" target=\"_blank\">Help</a>"
+msgstr "<strong>Upozornění:</strong> Bezpečný režim je aktivní a žádné snippety se tedy nespouští! Odstraňte konstantu <code>CODE_SNIPPETS_SAFE_MODE</code> ze souboru <code>wp-config.php</code> pro vypnutí bezpečného režimu. <a href=\"https://github.com/sheabunge/code-snippets/wiki/Safe-Mode\" target=\"_blank\">Nápověda</a>"
+
+#: php/admin-menus/class-manage-menu.php:162
+msgid "Snippet <strong>activated</strong>."
+msgstr "Snippet byl <strong>aktivován</strong>."
+
+#: php/admin-menus/class-manage-menu.php:163
+msgid "Selected snippets <strong>activated</strong>."
+msgstr "Vybrané snippety byly <strong>aktivovány</strong>."
+
+#: php/admin-menus/class-manage-menu.php:164
+msgid "Snippet <strong>deactivated</strong>."
+msgstr "Snippet byl <strong>deaktivován</strong>."
+
+#: php/admin-menus/class-edit-menu.php:411
+msgid "Scope"
+msgstr "Smyčka"
+
+#: php/admin-menus/class-edit-menu.php:405
+msgid "Run snippet everywhere"
+msgstr "Spouštět snippet všude"
+
+#: php/admin-menus/class-edit-menu.php:406
+msgid "Only run in administration area"
+msgstr "Spouštět pouze v prostředí administrace"
+
+#: php/admin-menus/class-edit-menu.php:407
+msgid "Only run on site front-end"
+msgstr "Spouštět pouze ve front-endu"

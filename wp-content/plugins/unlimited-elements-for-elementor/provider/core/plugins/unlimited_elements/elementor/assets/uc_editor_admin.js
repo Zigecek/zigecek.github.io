@@ -458,6 +458,45 @@ function UniteCreatorElementorEditorAdmin(){
 		return(options);
 	}
 	
+	/**
+	 * init the select 2 object eventually
+	 */
+	function initPostIDsSelect_initObject(objSelect, arrInitData){
+		
+		
+		var options = getSelect2AjaxOptions("get_posts_list_forselect");
+		
+		/*
+		var placeholder = objSelect.data("placeholder");
+		if(placeholder){
+			placeholder = t.decodeContent(placeholder);
+			options["placeholder"] = placeholder;
+		}
+		*/
+		
+		options["placeholder"] = "All Posts";
+		
+		if(arrInitData){
+			options["data"] = arrInitData;
+			
+		}
+				
+		objSelect.select2(options);
+		
+		if(!arrInitData)
+			return(false);
+		
+		
+		//make init values
+		var arrInitIDs = [];
+		for(var key in arrInitData){
+			var item = arrInitData[key];
+			arrInitIDs.push(item.id);
+		}
+				
+		objSelect.val(arrInitIDs).trigger("change");
+		
+	}
 	
 	/**
 	 * init post id's selector
@@ -470,19 +509,38 @@ function UniteCreatorElementorEditorAdmin(){
 		
 		var initValue = getVal(widgetSettings, settingName);
 		
-		trace("set init value!!!");
-		trace(initValue);
-		
-		var placeholder = objSelect.data("placeholder");
-		
-		var options = getSelect2AjaxOptions("get_posts_list_forselect");
-		
-		if(placeholder){
-			placeholder = t.decodeContent(placeholder);
-			options["placeholder"] = placeholder;
+		if(jQuery.isArray(initValue) == false || jQuery.isEmptyObject(initValue)){
+			initPostIDsSelect_initObject(objSelect);
+			return(false);
 		}
 		
-		objSelect.select2(options);
+		//get titles by ajax
+		objSelect.hide();
+		
+		//var loaderText = objSelect.data("loadertext");
+		//loaderText = t.decodeContent(loaderText);
+		
+		loaderText = "Loading Data...";
+		
+		//append loader
+		var objParent = objSelect.parent();
+		objParent.append("<span class='uc-panel-ajax-loader'>"+loaderText+"</span>");
+		
+		var objLoader = objParent.find(".uc-panel-ajax-loader");
+		
+		var ajaxData = {
+				post_ids: initValue
+		};
+		
+		ajaxRequest("get_select2_post_titles", ajaxData, function(response){
+			
+			objLoader.remove();
+			
+			var arrSelectData = getVal(response, "select2_data");
+			
+			initPostIDsSelect_initObject(objSelect, arrSelectData);
+						
+		});
 		
 	}
 	
@@ -490,7 +548,7 @@ function UniteCreatorElementorEditorAdmin(){
 	 * init the addons selector
 	 */
 	function initSpecialSelects(){
-				
+		
 		var objSelect = g_objSettingsPanel.find(".unite-setting-special-select");
 		if(objSelect.length == 0)
 			return(false);
@@ -1247,6 +1305,48 @@ function UniteCreatorElementorEditorAdmin(){
 		window.ucLastElementorModelID = model.id;
 		window.ucLastElementorModel = model.attributes;
 		
+		window.lastWidgetType = getVal(model.attributes, "widgetType");
+		
+	}
+	
+	/**
+	 * run ajax action
+	 */
+	this.runAjaxAction = function(action){
+		
+		var data = {
+			widget_name: window.lastWidgetType
+		};
+		
+		var ajaxAction;
+		switch(action){
+			case "reinstall_widget":
+				ajaxAction = "update_addon_from_catalog";
+				var widgetTitle = jQuery("#elementor-panel-header-title").text();
+				
+				widgetTitle = widgetTitle.replace("Edit ","");
+				
+				if(confirm("Do you really want to reinstall \""+widgetTitle+"\" widget?") == false)
+					return(false);
+				
+			break;
+		}
+		
+		if(!ajaxAction){
+			alert("no action");
+			return(false);
+		}
+			
+		ajaxRequest(ajaxAction, data, function(response){
+			
+			switch(action){
+				case "reinstall_widget":
+					alert("widget updated, please refresh the page");
+				break;
+			}
+			
+		});
+					
 	}
 	
 	
@@ -1292,12 +1392,11 @@ function UniteCreatorElementorEditorAdmin(){
 		initAudioControl();
 		
 		initPostTypeSelectControl();
-				
+		
 		initEvents();
 		
 	}
 	
-
 
 }
 

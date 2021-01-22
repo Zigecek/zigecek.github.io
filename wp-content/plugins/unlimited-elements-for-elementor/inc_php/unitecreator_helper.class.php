@@ -25,10 +25,9 @@ defined('UNLIMITED_ELEMENTS_INC') or die('Restricted access');
 		private static $arrHashCache = array();
 		private static $arrLocalText = array();
 		private static $arrDebug;
-		
+		private static $hasOutput = false;
 		
 		public static function a____GENERAL____(){}
-		
 		
 		/**
 		 * validate plugin startup functionality
@@ -773,6 +772,9 @@ defined('UNLIMITED_ELEMENTS_INC') or die('Restricted access');
 			if(empty($urlAssets))
 				return($value);
 			
+			if(is_string($value) == false)
+				return($value);
+				
 			$value = str_replace("[url_assets]/", $urlAssets, $value);
 			$value = str_replace("{{url_assets}}/", $urlAssets, $value);
 			

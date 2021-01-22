@@ -21,7 +21,7 @@ defined('UNLIMITED_ELEMENTS_INC') or die('Restricted access');
 		
 		private $id = null;
 		private $isInited = false;
-		private $title,$type,$html,$htmlItem,$htmlItem2,$css,$cssItem,$js;
+		private $title,$type,$html,$htmlItem,$htmlItem2,$css,$cssItem,$js,$updateHash;
 		private $data, $config, $arrTemplates;
 		private $params = array(),$paramsItems = array(), $options = array();
 		private $name, $alias, $catid, $ordering, $isActive;
@@ -533,6 +533,8 @@ defined('UNLIMITED_ELEMENTS_INC') or die('Restricted access');
 			$this->ordering = (int)UniteFunctionsUC::getVal($record, "ordering");
 			$this->isActive = (int)UniteFunctionsUC::getVal($record, "is_active");
 			$this->type = UniteFunctionsUC::getVal($record, "addontype");
+			$this->updateHash = UniteFunctionsUC::getVal($record, "test_slot1");
+			
 			
 			//get templates
 			$this->arrTemplates = $this->parseJsonFromRecord($record, "templates");
@@ -657,6 +659,15 @@ defined('UNLIMITED_ELEMENTS_INC') or die('Restricted access');
 		
 		protected function a_________GETTERS_________(){}
 		
+		/**
+		 * get the update hash if available
+		 */
+		public function getUpdateHash(){
+			
+			$this->validateInited();
+			
+			return($this->updateHash);
+		}
 		
 		/**
 		 * get addon type object
@@ -2383,10 +2394,15 @@ defined('UNLIMITED_ELEMENTS_INC') or die('Restricted access');
 			$arr["addontype"] = $type;
 			$arr["config"] = $strConfig;
 			$arr["templates"] = $strTemplates;
-		
+			
+			//save hash on test_slot1 for further compare
+			$hash = md5(json_encode($arr));
+			
+			$arr["test_slot1"] = $hash;
 			
 			return($arr);
 		}
+		
 		
 		/**
 		 * get last order in category for insert or change
@@ -2514,7 +2530,6 @@ defined('UNLIMITED_ELEMENTS_INC') or die('Restricted access');
 			$this->validateInited();
 
 			$arrUpdate = $this->getCreateUpdateData($data);
-			
 			
 			$this->updateInDB($arrUpdate);
 		}

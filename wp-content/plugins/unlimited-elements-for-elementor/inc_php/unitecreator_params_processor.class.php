@@ -82,7 +82,8 @@ class UniteCreatorParamsProcessorWork{
 		if(empty($value))
 			return($value);
 		
-		$value = $this->convertFromUrlAssets($value);
+		if(is_string($value))
+			$value = $this->convertFromUrlAssets($value);
 		
 		switch($type){
 			case "uc_image":

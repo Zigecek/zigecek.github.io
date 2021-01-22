@@ -580,6 +580,17 @@ Note : This plugin works with Elementor. Make sure you have [Elementor](https://
 
 == Changelog ==
 
+version 1.4.62 = 2021-01-21
+
+* Feature: added text shadow field
+* Feature: added "manual selection" in posts query
+* Feature: added compatability tag
+* Fix: fixed image size thumb name with "-" sign inside
+* Fix: fixed some php warning related to array to string conversion, happening in php 8
+* Change: show woo commerce placeholders if selected "for woocommerce products" checkbox in post list attribute
+* Change: improved woo category output placeholder help, added getTermCustomFields function
+
+
 version 1.4.61 = 2021-01-14
 
 * Feature: added max posts and order by options to current query posts selection

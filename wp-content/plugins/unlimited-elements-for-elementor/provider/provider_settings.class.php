@@ -60,7 +60,7 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 	protected function getCategoriesFromAllPostTypes($arrPostTypes){
 		
 		if(empty($arrPostTypes))
-			return($array);
+			return(array());
 
 		$arrAllCats = array();
 		$arrAllCats[__("All Categories", "unlimited-elements-for-elementor")] = "all";
@@ -561,22 +561,33 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 	 * add post ID select
 	 * Enter description here ...
 	 */
-	protected function addPostIDSelect($settingName){
+	protected function addPostIDSelect($settingName, $text = null, $elementorCondition = null){
+		
+		if(empty($text))
+			$text = __("Search and Select Posts", "unlimited-elements-for-elementor");
 		
 		$params = array();
 		
 		$params[UniteSettingsUC::PARAM_CLASSADD] = "unite-setting-special-select";
 		
+		/*
 		$placeholder = __("All Posts", "unlimited-elements-for-elementor");
 		$placeholder = UniteFunctionsUC::encodeContent($placeholder);
+		*/
 		
-		$params[UniteSettingsUC::PARAM_ADDPARAMS] = "data-settingtype='post_ids' data-placeholder='{$placeholder}'";
+		$loaderText = __("Loading Data...", "unlimited-elements-for-elementor");
+		$loaderText = UniteFunctionsUC::encodeContent($loaderText);
+		
+		$params[UniteSettingsUC::PARAM_ADDPARAMS] = "data-settingtype='post_ids' data-loadertext='$loaderText'";
 		
 		$params["datasource"] = "post_type";
 		$params["origtype"] = "uc_select_special";
 		$params["label_block"] = true;
 		
-		$this->addSelect($settingName, array(), __("Search and Select Posts", "unlimited-elements-for-elementor"), "", $params);
+		if(!empty($elementorCondition))
+			$params["elementor_condition"] = $elementorCondition;
+		
+		$this->addSelect($settingName, array(), $text , "", $params);
 		
 	}
 	
@@ -611,9 +622,7 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 			$activeLanguege = $objWpmlIntegrate->getActiveLanguage();
 		}
 		*/
-		
-		$arrGlobalElementorCondition = array();
-		
+				
 		//fill simple types
 		$arrTypesSimple = array();
 		
@@ -638,26 +647,34 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 		//----- posts source ----
 		//UniteFunctionsUC::showTrace();
 		
-		$arrGlobalElementorCondition = array();
+		$arrNotCurrentElementorCondition = array();
 		$arrCustomOnlyCondition = array();
 		$arrRelatedOnlyCondition = array();
 		$arrCurrentElementorCondition = array();
 		$arrCustomAndCurrentElementorCondition = array();
+		$arrNotManualElementorCondition = array();
+		$arrCustomAndRelatedElementorCondition = array();
+		$arrManualElementorCondition = array();
 		
 		
 		if($addCurrentPosts == true){
-			
+						
 			$arrCurrentElementorCondition = array(
 				$name."_source" => "current",
 			);
 			
-			$arrGlobalElementorCondition = array(
+			$arrNotCurrentElementorCondition = array(
 				$name."_source!" => "current",
 			);
 			
 			$arrCustomAndCurrentElementorCondition = array(
-				$name."_source!" => "related",
+				$name."_source" => array("current","custom"),
 			);
+			
+			$arrCustomAndRelatedElementorCondition = array(
+				$name."_source" => array("related","custom"), 
+			);
+
 			
 			$arrCustomOnlyCondition = array(
 				$name."_source" => "custom",
@@ -671,6 +688,14 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 				$name."_source!" => "related",
 			);
 			
+			$arrNotManualElementorCondition = array(
+				$name."_source!" => "manual",
+			);
+			
+			$arrManualElementorCondition = array(
+				$name."_source" => "manual",
+			);
+			
 			
 			$params = array();
 			$params["origtype"] = UniteCreatorDialogParam::PARAM_DROPDOWN;
@@ -681,7 +706,7 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 			$arrSourceOptions[__("Current Query Posts", "unlimited-elements-for-elementor")] = "current";
 			$arrSourceOptions[__("Custom Posts", "unlimited-elements-for-elementor")] = "custom";
 			$arrSourceOptions[__("Related Posts", "unlimited-elements-for-elementor")] = "related";
-			
+			$arrSourceOptions[__("Manual Selection", "unlimited-elements-for-elementor")] = "manual";
 			
 			$this->addSelect($name."_source", $arrSourceOptions, esc_html__("Posts Source", "unlimited-elements-for-elementor"), $source, $params);
 			
@@ -726,8 +751,7 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 		$params["origtype"] = "uc_select_special";
 		//$params["description"] = esc_html__("Select which Post Type or Custom Post Type you wish to display", "unlimited-elements-for-elementor");
 		
-		if(!empty($arrCustomOnlyCondition))
-			$params["elementor_condition"] = $arrCustomOnlyCondition;
+		$params["elementor_condition"] = $arrCustomOnlyCondition;
 		
 		$params["is_multiple"] = true;
 		
@@ -738,6 +762,7 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 		
 		$params = array();
 		$params["origtype"] = UniteCreatorDialogParam::PARAM_HR;
+		$params["elementor_condition"] = $arrCustomOnlyCondition;
 		
 		$this->addHr("post_before_include",$params);
 
@@ -760,8 +785,7 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 			$params["is_multiple"] = true;
 			$params["origtype"] = UniteCreatorDialogParam::PARAM_DROPDOWN;
 			
-			if(!empty($arrCustomOnlyCondition))
-				$params["elementor_condition"] = $arrCustomOnlyCondition;
+			$params["elementor_condition"] = $arrCustomOnlyCondition;
 			
 			$this->addMultiSelect($name."_includeby", $arrIncludeBy, esc_html__("Include By", "unlimited-elements-for-elementor"), $includeBy, $params);
 			
@@ -769,15 +793,11 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 			
 			$params = array();
 			$params["origtype"] = UniteCreatorDialogParam::PARAM_HR;
-			if(!empty($arrCustomOnlyCondition))
-				$params["elementor_condition"] = $arrCustomOnlyCondition;
+			
+			$params["elementor_condition"] = $arrCustomOnlyCondition;
 			
 			$this->addHr("after_include_by",$params);
 		}
-		
-		//----- manual selection -------
-		
-		//$this->addPostIDSelect($name."_post_ids");
 		
 		//----- add categories -------
 		
@@ -812,9 +832,7 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 		
 		//$params["description"] = esc_html__("Filter Posts by Specific Term", "unlimited-elements-for-elementor");
 		
-		if(!empty($arrGlobalElementorCondition))
-			$params["elementor_condition"] = $arrCustomOnlyCondition;
-		
+		$params["elementor_condition"] = $arrCustomOnlyCondition;
 		
 		$this->addMultiSelect($name."_category", $arrCats, esc_html__("Include By Terms", "unlimited-elements-for-elementor"), $category, $params);
 		
@@ -824,8 +842,7 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 		$params = array();
 		$params["origtype"] = UniteCreatorDialogParam::PARAM_DROPDOWN;
 		
-		if(!empty($arrGlobalElementorCondition))
-			$params["elementor_condition"] = $arrCustomOnlyCondition;
+		$params["elementor_condition"] = $arrCustomOnlyCondition;
 		
 		$relation = UniteFunctionsUC::getVal($value, $name."_category_relation", "AND");
 		
@@ -840,8 +857,7 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 		$params = array();
 		$params["origtype"] = UniteCreatorDialogParam::PARAM_RADIOBOOLEAN;
 		
-		if(!empty($arrGlobalElementorCondition))
-			$params["elementor_condition"] = $arrCustomOnlyCondition;
+		$params["elementor_condition"] = $arrCustomOnlyCondition;
 		
 		
 		$isIncludeChildren = UniteFunctionsUC::getVal($value, $name."_terms_include_children", false);
@@ -850,12 +866,16 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 		$this->addRadioBoolean($name."_terms_include_children", __("Include Terms Children", "unlimited-elements-for-elementor"), $isIncludeChildren, "Yes", "No", $params);
 		
 		
+		//---- manual selection search and replace -----
+		
+		$this->addPostIDSelect($name."_manual_select_post_ids", null, $arrManualElementorCondition);
+		
+		
 		// --------- add hr before exclude -------------
 		
 		$params = array();
 		$params["origtype"] = UniteCreatorDialogParam::PARAM_HR;
-		if(!empty($arrCustomOnlyCondition))
-			$params["elementor_condition"] = $arrCustomOnlyCondition;
+		$params["elementor_condition"] = $arrCustomOnlyCondition;
 		
 		$this->addHr("before_exclude_by",$params);
 		
@@ -873,21 +893,21 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 		$params["origtype"] = UniteCreatorDialogParam::PARAM_DROPDOWN;
 		$params["is_multiple"] = true;
 		
-		if(!empty($arrGlobalElementorCondition))
-			$params["elementor_condition"] = $arrNotInRelatedCondition;
+		$params["elementor_condition"] = $arrNotManualElementorCondition;
 		
 		//$params["description"] = esc_html__("Exclude Posts By", "unlimited-elements-for-elementor");
 		
 		$arrExclude = array_flip($arrExclude);
 		
 		$arrExcludeValues = "";
-				
+		
 		$this->addMultiSelect($name."_excludeby", $arrExclude, __("Exclude By", "unlimited-elements-for-elementor"), $arrExcludeValues, $params);
 		
 		//----- hr -------
 		
 		$params = array();
 		$params["origtype"] = UniteCreatorDialogParam::PARAM_HR;
+		$params["elementor_condition"] = $arrNotManualElementorCondition;
 		
 		$this->addHr("post_after_exclude",$params);
 		
@@ -901,8 +921,7 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 		$params["origtype"] = UniteCreatorDialogParam::PARAM_TEXTFIELD;
 		$params["placeholder"] = __("$maxPostsPerPage posts if empty","unlimited-elements-for-elementor");
 		
-		if(!empty($arrCurrentElementorCondition))
-			$params["elementor_condition"] = $arrCurrentElementorCondition;
+		$params["elementor_condition"] = $arrCurrentElementorCondition;
 		
 		$this->addTextBox($name."_maxitems_current", $maxItems, esc_html__("Max Posts", "unlimited-elements-for-elementor"), $params);
 		
@@ -916,10 +935,10 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 		
 		//$params["description"] = "Enter how many Posts you wish to display, -1 for unlimited";
 		
-		if(!empty($arrGlobalElementorCondition))
-			$params["elementor_condition"] = $arrGlobalElementorCondition;
+		$params["elementor_condition"] = $arrCustomAndRelatedElementorCondition;
 		
 		$this->addTextBox($name."_maxitems", $maxItems, esc_html__("Max Posts", "unlimited-elements-for-elementor"), $params);
+		
 		
 		//----- orderby --------
 		
@@ -965,17 +984,19 @@ class UniteCreatorSettings extends UniteCreatorSettingsWork{
 		$params["origtype"] = UniteCreatorDialogParam::PARAM_DROPDOWN;
 		//$params["description"] = esc_html__("Select order direction. Descending A-Z or Accending Z-A", "unlimited-elements-for-elementor");
 		
-		if(!empty($arrCustomAndCurrentElementorCondition))
-			$params["elementor_condition"] = $arrCustomAndCurrentElementorCondition;
+		$params["elementor_condition"] = $arrCustomAndCurrentElementorCondition;
 		
 		$orderDir1 = UniteFunctionsUC::getVal($value, $name."_orderdir1", "default" );
 		$this->addSelect($name."_orderdir1", $arrDir, __("&nbsp;&nbsp;Order By Direction", "unlimited-elements-for-elementor"), $orderDir1, $params);
 		
+		//---- hr before query id -----
 		
 		$params = array();
 		$params["origtype"] = UniteCreatorDialogParam::PARAM_HR;
 		
-		$this->addHr("", $params);
+		
+		$this->addHr("hr_after_order_dir", $params);
+				
 		
 		//---- query id -----
 		

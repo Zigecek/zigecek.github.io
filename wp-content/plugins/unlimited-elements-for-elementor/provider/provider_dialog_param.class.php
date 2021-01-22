@@ -48,12 +48,13 @@ class UniteCreatorDialogParam extends UniteCreatorDialogParamWork{
 		$this->arrParams[] = self::PARAM_BACKGROUND;
 		$this->arrParams[] = self::PARAM_MENU;
 		$this->arrParams[] = self::PARAM_BORDER;
+		$this->arrParams[] = self::PARAM_TEXTSHADOW;
 		
 		if(GlobalsUC::$inDev == true){
-						
-			$this->arrParams[] = self::PARAM_DATETIME;
-			$this->arrParams[] = self::PARAM_TEXTSHADOW;
+			
 			$this->arrParams[] = self::PARAM_BOXSHADOW;
+			$this->arrParams[] = self::PARAM_DATETIME;
+			
 		}
 		
 		$this->arrParams = $this->filterMainParams($this->arrParams);

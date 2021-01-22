@@ -115,7 +115,7 @@ class UniteCreatorActions{
 					$response = $categories->removeFromData($data);
 				
 					HelperUC::ajaxResponseSuccess(esc_html__("The category deleted successfully","unlimited-elements-for-elementor"),$response);
-					break;
+				break;
 				case "update_category":
 					$categories->updateFromData($data);
 					HelperUC::ajaxResponseSuccess(esc_html__("Category updated","unlimited-elements-for-elementor"));
@@ -380,15 +380,21 @@ class UniteCreatorActions{
 				break;
 				case "install_catalog_addon":
 					$response = $webAPI->installCatalogAddonFromData($data);
-					HelperUC::ajaxResponseSuccess(esc_html__("Addon Installed", "unlimited-elements-for-elementor"), $response);
+					HelperUC::ajaxResponseSuccess(esc_html__("Widget Installed", "unlimited-elements-for-elementor"), $response);
 				break;
 				case "install_catalog_page":
 					$arrResponse = $webAPI->installCatalogPageFromData($data);
 					HelperUC::ajaxResponseSuccess(esc_html__("Template Installed", "unlimited-elements-for-elementor"), $arrResponse);
 				break;
 				case "update_addon_from_catalog":	//by id
+					
 					$urlRedirect = $addons->updateAddonFromCatalogFromData($data);
-					HelperUC::ajaxResponseSuccessRedirect(esc_html__("Addon Updated","unlimited-elements-for-elementor"), $urlRedirect);
+					
+					if(!empty($urlRedirect))
+						HelperUC::ajaxResponseSuccessRedirect(esc_html__("Widget Updated","unlimited-elements-for-elementor"), $urlRedirect);
+					else
+						HelperUC::ajaxResponseSuccess(esc_html__("Widget Updated","unlimited-elements-for-elementor"));
+						
 				break;
 				case "get_shapes_css":
 					
@@ -427,6 +433,13 @@ class UniteCreatorActions{
 					$arrPostList = $operations->getPostListForSelectFromData($data);
 					
 					HelperUC::ajaxResponseData($arrPostList);
+					
+				break;
+				case "get_select2_post_titles":
+					
+					$arrData = $operations->getSelect2PostTitles($data);
+					
+					HelperUC::ajaxResponseData(array("select2_data"=>$arrData));
 					
 				break;
 				case "get_post_child_params":

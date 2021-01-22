@@ -573,12 +573,36 @@ class UniteCreatorOutputWork extends HtmlOutputBaseUC{
 	
 	
 	/**
+	 * process text shadow param
+	 */
+	private function processParamCSSSelector_textShadow($param, $selector){
+		
+		$isEnable = UniteFunctionsUC::getVal($param, "enable_default_values");
+		$isEnable = UniteFunctionsUC::strToBool($isEnable);
+		
+		if($isEnable == false)
+			return(false);
+			
+		$color = UniteFunctionsUC::getVal($param, "color");
+		$blur = UniteFunctionsUC::getVal($param, "blur");
+		$horizontal = UniteFunctionsUC::getVal($param, "horizontal");
+		$vertical = UniteFunctionsUC::getVal($param, "vertical");
+		
+		$shadow = "{$horizontal}px {$vertical}px {$blur}px {$color}";
+		
+		$css = "text-shadow:$shadow";
+		
+		$style = "{$selector}{{$css}}";
+		
+		return($style);
+	}
+	
+	
+	/**
 	 * process background param
 	 */
 	private function processParamCSSSelector_background($param, $selector){
 		
-		
-		//$this->addon
 		
 		$name = UniteFunctionsUC::getVal($param, "name");
 		$value = UniteFunctionsUC::getVal($param, "value");
@@ -921,6 +945,9 @@ class UniteCreatorOutputWork extends HtmlOutputBaseUC{
 			break;
 			case UniteCreatorDialogParam::PARAM_DROPDOWN:
 				$style = $this->processParamCSSSelector_value($param, $selector);				
+			break;
+			case UniteCreatorDialogParam::PARAM_TEXTSHADOW:
+				$style = $this->processParamCSSSelector_textShadow($param, $selector);				
 			break;
 		}
 		

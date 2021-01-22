@@ -952,7 +952,7 @@ class UniteCreatorAddons extends UniteElementsBaseUC{
 		
 		if(!empty($addonData))
 			$data = UniteFunctionsUC::decodeContent($addonData);
-				
+		
 		$addonID = UniteFunctionsUC::getVal($data, "id");
 		
 		$objAddon = new UniteCreatorAddon();
@@ -1492,19 +1492,39 @@ class UniteCreatorAddons extends UniteElementsBaseUC{
 	 */
 	public function updateAddonFromCatalogFromData($data){
 		
-		$addonID = UniteFunctionsUC::getVal($data, "id");
-		$addonID = (int)$addonID;
+		$widgetName = UniteFunctionsUC::getVal($data, "widget_name");
 		
 		$objAddon = new UniteCreatorAddon();
-		$objAddon->initByID($addonID);
+		
+		$addonID = null;
+		
+		if(!empty($widgetName)){
+			
+			$alias = str_replace("ucaddon_", "", $widgetName);
+			
+			$objAddon->initByAlias($alias, GlobalsUC::ADDON_TYPE_ELEMENTOR);
+			
+		}else{		//init by id
+			
+			$addonID = UniteFunctionsUC::getVal($data, "id");
+			$addonID = (int)$addonID;
+			
+			$objAddon->initByID($addonID);
+		}
 		
 		$installData = array();
 		
-		$installData["name"] = $objAddon->getName();
+		$installData["name"] = $objAddon->getAlias();
 		$installData["cat"] = $objAddon->getCatTitle();
+		$installData["type"] = $objAddon->getType();
 		
 		$webAPI = new UniteCreatorWebAPI();
+		
+		$webAPI->checkUpdateCatalog(true);
 		$webAPI->installCatalogAddonFromData($installData);
+		
+		if(empty($addonID))
+			return(null);
 		
 		$urlRedirect = HelperUC::getViewUrl_EditAddon($addonID);
 		

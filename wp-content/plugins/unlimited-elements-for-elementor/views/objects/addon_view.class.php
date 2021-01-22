@@ -1270,6 +1270,7 @@ class UniteCreatorAddonView{
 		$output["post_id"] = null;
 		$output["use_custom_fields"] = false;
 		$output["use_category"] = false;
+		$output["add_woo"] = false;
 		
 		//return by post list
 		if(!empty($paramPostList)){
@@ -1288,7 +1289,12 @@ class UniteCreatorAddonView{
 				$output["post_id"] = $postExample;
 				$output["use_custom_fields"] = $useCustomFields;
 			}
-						
+
+			$forWooProducts = UniteFunctionsUC::getVal($paramPostList, "for_woocommerce_products");
+			$forWooProducts = UniteFunctionsUC::strToBool($forWooProducts);
+			
+			$output["add_woo"] = $forWooProducts;
+			
 		}
 		
 		
@@ -1303,15 +1309,23 @@ class UniteCreatorAddonView{
 		
 		$enableCustomFields = $postOptions["use_custom_fields"];
 		
+		$isAddWoo = UniteFunctionsUC::getVal($postOptions, "add_woo");
+		
 		$arrAdditions = array();
+		
+		if($isAddWoo == true)
+			$arrAdditions[GlobalsProviderUC::POST_ADDITION_WOO] = GlobalsProviderUC::POST_ADDITION_WOO;
+		
 		if($enableCustomFields == true)
 			$arrAdditions[GlobalsProviderUC::POST_ADDITION_CUSTOMFIELDS] = GlobalsProviderUC::POST_ADDITION_CUSTOMFIELDS;
 		
 		$params = $this->objAddon->getParams(UniteCreatorDialogParam::PARAM_POSTS_LIST);
-			
+		
+		
 		if(empty($params))
 			return($arrAdditions);
 		
+			
 		$param = $params[0];
 		$enableCustomFields = UniteFunctionsUC::getVal($param, "use_custom_fields");
 		$enableCustomFields = UniteFunctionsUC::strToBool($enableCustomFields);
@@ -1324,10 +1338,9 @@ class UniteCreatorAddonView{
 		
 		if($enableCategory == true)
 			$arrAdditions[GlobalsProviderUC::POST_ADDITION_CATEGORY] = GlobalsProviderUC::POST_ADDITION_CATEGORY;
-		
+			
 		$arrAdditions = array_values($arrAdditions);
-		
-				
+						
 		return($arrAdditions);
 	}
 	
@@ -1339,7 +1352,7 @@ class UniteCreatorAddonView{
 	protected function getParamChildKeys(){
 		
 		$postOptions = $this->getChildPostOptions();
-		
+				
 		$postID = $postOptions["post_id"];
 		
 		$arrAdditions = $this->getParamChildKeys_getPostAdditions($postOptions);

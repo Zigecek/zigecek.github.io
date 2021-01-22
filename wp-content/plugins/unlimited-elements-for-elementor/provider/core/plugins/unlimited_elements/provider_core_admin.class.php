@@ -102,17 +102,7 @@ class UniteProviderCoreAdminUC_Elementor extends UniteProviderAdminUC{
 		if($enableBackgrounds == true)
 			$this->addSubMenuPage(GlobalsUnlimitedElements::VIEW_BACKGROUNDS, __('Background Widgets', "unlimited-elements-for-elementor"), "adminPages");
 
-		
-		if(GlobalsUC::$inDev == true){
-						
-/*			
-			$this->addSubMenuPage(GlobalsUnlimitedElements::VIEW_SECTIONS_ELEMENTOR, __('Sections',"unlimited-elements-for-elementor"), "adminPages");
-			$this->addSubMenuPage(GlobalsUnlimitedElements::VIEW_CUSTOM_POST_TYPES, __('Custom Post Types',"unlimited-elements-for-elementor"), "adminPages");
-			$this->addSubMenuPage(GlobalsUnlimitedElements::VIEW_ICONS, __('SVG Shapes',"unlimited-elements-for-elementor"), "adminPages");
-			$this->addSubMenuPage(GlobalsUnlimitedElements::VIEW_BACKGROUNDS, __('Section Backgrounds',"unlimited-elements-for-elementor"), "adminPages");
-*/
-		}
-		
+				
 		$this->addSubMenuPage(GlobalsUnlimitedElements::VIEW_TEMPLATES_ELEMENTOR, __('Templates',"unlimited-elements-for-elementor"), "adminPages");
 		
 		$this->addSubMenuPage("settingselementor", __('General Settings',"unlimited-elements-for-elementor"), "adminPages");

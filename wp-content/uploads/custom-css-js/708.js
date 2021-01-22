@@ -40,6 +40,6 @@ window.onload = (event) => {
         }
       };
     };
-  }, 1000)
+  }, 500)
 };</script>
 <!-- end Simple Custom CSS and JS -->

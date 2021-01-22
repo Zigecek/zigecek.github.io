@@ -1,0 +1,178 @@
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/class-alg-slugs-manager-core.php:80
+#, php-format
+msgid "Removing old slugs from database finished! %d old slug(s) deleted."
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/pro/class-alg-slugs-manager-crons.php:92
+msgid "Once Weekly"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/pro/class-alg-slugs-manager-crons.php:96
+msgid "Once a Minute"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/pro/class-alg-slugs-manager-pro.php:80
+#, php-format
+msgid "%d slugs regenerated."
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:52
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:53
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:71
+msgid "Old Slugs"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:72
+msgid "This tool removes old slugs (permalinks) from database."
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:104
+msgid "Old Slug"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:105
+msgid "Post ID"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:106
+msgid "Post Title"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:107
+msgid "Post Type"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:108
+msgid "Current Slug"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:126
+#, php-format
+msgid "<p><strong>%d</strong> old slug(s) found:<p>"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:131
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:241
+msgid "Are you sure?"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:131
+msgid "Remove old slugs"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:136
+msgid "No old slugs found in database."
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:141
+msgid "Refresh list"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:155
+msgid "Automatic Clean Ups"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:157
+#, php-format
+msgid "You will need %s plugin to enable automatic old slugs clean ups."
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:159
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:236
+msgid "Remove Old Slugs Pro"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:162
+msgid ""
+"<code>DISABLE_WP_CRON</code> is set to <code>true</code> in your <code>wp-"
+"config.php</code> file - \"Scheduled Clean Ups\" won't work."
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:169
+msgid "Disabled"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:170
+msgid "Every minute"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:171
+msgid "Hourly"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:172
+msgid "Twice daily"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:173
+msgid "Daily"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:174
+msgid "Weekly"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:183
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:202
+msgid "Save"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:188
+#, php-format
+msgid "Next old slugs clean up is scheduled on %s. Current time is %s."
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:198
+msgid "No"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:199
+msgid "Yes"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:207
+msgid "Scheduled Clean Ups"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:208
+#, php-format
+msgid "Set old slugs to be cleared periodically (%s)."
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:213
+msgid "Clean Up on Save Post"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:214
+msgid "Set old slugs to be cleared automatically, when post is saved."
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:232
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:246
+msgid "Regenerate Slugs"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:234
+#, php-format
+msgid "You will need %s plugin to enable slugs regeneration."
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:240
+msgid "There is no undo for this action."
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:241
+msgid "Regenerate"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/includes/settings/class-alg-slugs-manager-settings.php:247
+msgid "Regenerate slug from <strong>title</strong> for all posts."
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/remove-old-slugs.php:150
+msgid "Settings"
+msgstr ""
+
+#: C:\wamp64\www\wp\wp-content\plugins/remove-old-slugspermalinks/remove-old-slugs.php:153
+msgid "Unlock All"
+msgstr ""

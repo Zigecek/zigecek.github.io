@@ -76,47 +76,6 @@ function jltmaNS(n){for(var e=n.split("."),a=window,i="",r=e.length,t=0;r>t;t++)
 <link rel="alternate" type="application/json+oembed" href="https://zigecek.github.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzigecek.github.io%2F" />
 <link rel="alternate" type="text/xml+oembed" href="https://zigecek.github.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzigecek.github.io%2F&#038;format=xml" />
 <!-- start Simple Custom CSS and JS -->
-<script>
-window.onload = (event) => {
-    const statObject = document.getElementById('bot-status');
-    const uptObject = document.getElementById('bot-uptime');
-
-    setInterval(() => {
-        if (uptObject || statObject) {
-            fetch('https://Zigger.zige.repl.co/status')
-                .then(response => {
-                    return response.json();
-                })
-                .then(res => {
-                    if (res) {
-                        res = JSON.parse(res);
-                        if (uptObject) {
-                            function sec2human(seconds) {
-                                const h = Math.floor(+seconds / 3600);
-                                const m = Math.floor(+seconds % 3600 / 60);
-                                const s = Math.floor(+seconds % 3600 % 60);
-                                const pad = n => n.toString().padStart(2, '0');
-                                let resp = m == 0 && h == 0 ? s : pad(s);
-                                if (m || h) resp = (h == 0 ? m : pad(m)) + ':' + resp;
-                                if (h) resp = h + ':' + resp;
-                                return resp;
-                            };
-                            uptObject.innerHTML = sec2human(Math.floor(res.uptime / 1000));
-                        };
-                        if (statObject) {
-                            if (res.status == 200) {
-                                statObject.innerHTML = 'Online';
-                            } else {
-                                statObject.innerHTML = 'Offline';
-                            }
-                        }
-                    };
-                })
-        };
-    }, 500)
-};</script>
-<!-- end Simple Custom CSS and JS -->
-<!-- start Simple Custom CSS and JS -->
 <style>
 .buttons {
   display: flex;
@@ -345,7 +304,7 @@ class="hfeed site" id="page">
 			
 		</div>
 			<div class="ast-main-header-bar-alignment"><div class="main-header-bar-navigation"><nav class="ast-flex-grow-1 navigation-accessibility" id="site-navigation" aria-label="Site Navigation" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope"><div class="main-navigation"><ul id="primary-menu" class="main-header-menu ast-nav-menu ast-flex ast-justify-content-flex-end  submenu-with-border astra-menu-animation-fade"><li id="menu-item-134" class="magic-hover magic-hover__square menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-125 current_page_item menu-item-134"><a href="https://zigecek.github.io/" aria-current="page" class="menu-link">Home</a></li>
-<li id="menu-item-784" class="magic-hover magic-hover__square menu-item menu-item-type-post_type menu-item-object-page menu-item-784"><a href="https://zigecek.github.io/zigger2/" class="menu-link">Zigger</a></li>
+<li id="menu-item-784" class="magic-hover magic-hover__square menu-item menu-item-type-post_type menu-item-object-page menu-item-784"><a href="https://zigecek.github.io/zigger/" class="menu-link">Zigger</a></li>
 </ul></div></nav></div></div>			</div><!-- Main Header Container -->
 		</div><!-- ast-row -->
 			</div> <!-- Main Header Bar -->

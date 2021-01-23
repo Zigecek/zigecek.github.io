@@ -9,13 +9,13 @@
 # dynamicky generované a měly by být upravovány pouze pomocí filtrů WordPressu.
 # Veškeré změny směrnic mezi těmito značkami budou přepsány.
 <IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /zigecek.github.io/
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /zigecek.github.io/index.php [L]
+	RewriteEngine On
+	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+	RewriteBase /zigecek.github.io/
+	RewriteRule ^index\.php$ - [L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule . /zigecek.github.io/index.php [L]
 </IfModule>
 
 # END WordPress

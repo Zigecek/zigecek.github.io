@@ -5,13 +5,6 @@ window.onload = (event) => {
     const statObject = document.getElementById('bot-status');
     const uptObject = document.getElementById('bot-uptime');
 
-    function httpGet(theUrl) {
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", theUrl, false); // false for synchronous request
-        xmlHttp.send(null);
-        return xmlHttp.responseText;
-    }
-
     setInterval(() => {
         if (uptObject || statObject) {
             fetch('https://Zigger.zige.repl.co/status')

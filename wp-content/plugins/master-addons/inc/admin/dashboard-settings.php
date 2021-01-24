@@ -31,8 +31,8 @@ class Master_Addons_Admin_Settings{
 
 
 	public function __construct() {
-
 		add_action( 'admin_menu', [ $this, 'master_addons_admin_menu' ],  '', 10);
+		add_action( 'network_admin_menu', [ $this, 'master_addons_admin_menu' ],  '', 10);
 		add_action( 'admin_enqueue_scripts', [ $this, 'master_addons_el_admin_scripts' ], 99 );
 
 		// Master Addons Elements
@@ -66,8 +66,8 @@ class Master_Addons_Admin_Settings{
 		return __( 'Master Addons', MELA_TD );
 	}
 
+	// Main Menu 
 	public function master_addons_admin_menu(){
-		
 		add_menu_page(
 			esc_html__( 'Master Addons for Elementor', MELA_TD ), // Page Title
 			esc_html__( 'Master Addons', MELA_TD ),    // Menu Title
@@ -77,16 +77,15 @@ class Master_Addons_Admin_Settings{
 			MELA_IMAGE_DIR . 'icon.png',
 			57
 		);
-
 	}
 
 
 
 	public function master_addons_el_admin_scripts( $hook ) {
 		$screen = get_current_screen();
-
+		
 		// Load Scripts only Master Addons Admin Page
-		if($screen->id == 'toplevel_page_master-addons-settings'){
+		if( $screen->id == 'toplevel_page_master-addons-settings' || $screen->id == 'toplevel_page_master-addons-settings-network' ){
 
 			//CSS
 			wp_enqueue_style( 'jltma-bootstrap', MELA_PLUGIN_URL . '/assets/css/bootstrap.min.css');

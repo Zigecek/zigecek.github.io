@@ -940,6 +940,25 @@
 				]
 			);
 
+			$this->add_responsive_control(
+				'jltma_accordion_border_radius',
+				array(
+					'label'      => esc_html__( 'Border Radius', MELA_TD ),
+					'type'       => Controls_Manager::DIMENSIONS,
+					'size_units' => array( 'px', '%' ),
+					'selectors'  => array(
+						'{{WRAPPER}} .ma-advanced-accordion .ma-accordion-tab-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					),
+				)
+			);
+
+			$this->add_group_control(
+				Group_Control_Box_Shadow::get_type(),
+				array(
+					'name' => 'jltma_accordion_box_shadow',
+					'selector' => '{{WRAPPER}} .ma-advanced-accordion .ma-accordion-tab-title',
+				)
+			);
 			$this->end_controls_section();
 
 			/**

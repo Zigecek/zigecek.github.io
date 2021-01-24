@@ -285,11 +285,11 @@ function jltma_admin_styles(){ ?>
 <?php }
 
 
-function jltma_get_options( $option, $default="" ){
-	if(isset($option) && $option!=""){
-		echo esc_attr($option);
-	}
-}
+// function jltma_get_options( $option, $default="" ){
+// 	if(isset($option) && $option!=""){
+// 		echo esc_attr($option);
+// 	}
+// }
 
 /**
  * Check if WooCommerce is active
@@ -340,3 +340,53 @@ function jltma_post_addons_rollback() {
     );
 }
 
+
+// Is Multiste
+function jltma_is_site_wide( $plugin ){
+	if ( ! is_multisite() ) {
+		return false;
+	}
+ 
+	$plugins = get_site_option( 'active_sitewide_plugins' );
+	if ( isset( $plugins[ $plugin ] ) ) {
+		return true;
+	}
+
+	return false;	
+}
+
+
+// First, Define a constant to see if site is network activated
+if ( ! function_exists( 'is_plugin_active_for_network' ) ) {
+    // Makes sure the plugin is defined before trying to use it
+    require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+}
+
+if (is_plugin_active_for_network('master-addons/master-addons.php') || is_plugin_active_for_network('master-addons-pro/master-addons.php') ) {  
+	// path to plugin folder and main file
+    define("JLTMA_NETWORK_ACTIVATED", true);
+} else {
+    define("JLTMA_NETWORK_ACTIVATED", false);
+}
+
+// Wordpress function 'get_site_option' and 'get_option'
+function jltma_get_options($option_name, $default="") {
+    if(JLTMA_NETWORK_ACTIVATED== true) {
+        // Get network site option
+        return get_site_option($option_name, $default);
+    } else {
+        // Get blog option
+        return get_option($option_name, $default);
+    }
+}
+
+// Wordpress function 'update_site_option' and 'update_option'
+function jltma_update_options($option_name, $option_value) {
+    if(JLTMA_NETWORK_ACTIVATED== true) {
+        // Update network site option
+        return update_site_option($option_name, $option_value);
+    } else {
+	    // Update blog option
+	    return update_option($option_name, $option_value);
+    }
+}

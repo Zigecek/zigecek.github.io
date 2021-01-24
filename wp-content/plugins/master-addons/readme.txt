@@ -263,13 +263,13 @@ MA Flip Box comes with a 3D effect and in a variety of options. The Variations a
 
 38. [Background Slider](https://master-addons.com/demos/background-slider/): This is a very simple background Elementor Addon that can generate a beautiful image and video sliders. You can easily customize the height, width, and padding. You can also background color overlay to make it look attractive. You can also change the alignment of the image within the slider as per your choice.
 
-39. [Gallery Slider](https://master-addons.com/demos/gallery-slider/): Gallery Slider helps you to showcase your images with the thumb. There are huge customization possibilities that will enhance your webpage quality. 
+39. [Gallery Slider](https://master-addons.com/demos/gallery-slider/): Gallery Slider helps you to showcase your images with the thumb. There are huge customization possibilities that will enhance your webpage quality.
 
-40. [Display Condition](https://master-addons.com/demos/display-conditions/): If you want to block any section from a specific browser, user, operating system, etc then use this display condition system. You can arrange sections nicely for multiple types of audiences. 
+40. [Display Condition](https://master-addons.com/demos/display-conditions/): If you want to block any section from a specific browser, user, operating system, etc then use this display condition system. You can arrange sections nicely for multiple types of audiences.
 
-41. [Header, Footer, & Comment Builder](https://master-addons.com/demos/header-footer-comment-builder/): We have developed a dynamic header footer and comment builder system. Just create a template from Master Addons option and assign it as a header, or footer, or comment. Then customize it with Elementor page builder. 
+41. [Header, Footer, & Comment Builder](https://master-addons.com/demos/header-footer-comment-builder/): We have developed a dynamic header footer and comment builder system. Just create a template from Master Addons option and assign it as a header, or footer, or comment. Then customize it with Elementor page builder.
 
-42. [Entrance Animation](https://master-addons.com/demos/entrance-animation/): If you want to create an eye-catching animation for your sections then you need Entrance Animation. There is a lot of pre-built animation available, you need to set duration and delay properly. 
+42. [Entrance Animation](https://master-addons.com/demos/entrance-animation/): If you want to create an eye-catching animation for your sections then you need Entrance Animation. There is a lot of pre-built animation available, you need to set duration and delay properly.
 
 And many more that are listed at the top list.
 
@@ -375,9 +375,18 @@ Paste on your Local Computer
 
 
 == Changelog ==
+= 1.5.6.2 (24-01-2021) =
+* Added: Custom Timeline date_format option added.
+* Updated: Fully Multisite supported
+* Fixed: Multisite Activation error issue fixed
+* Updated: Multisite License update all over network updated
+* Updated: Widgets loading on each Multisite require files updated
+* Added: Advanced Accordion - Border Radius, Box Shodow added on Title
+
+
 = 1.5.6 (10-01-2021) =
 * Added: "Gradient Headlines" Element added
-* Tweak: worked on Performance issue 
+* Tweak: worked on Performance issue
 * Fixed: Few CSS issue fixed
 
 = 1.5.5 (26-12-2020) =
@@ -430,7 +439,7 @@ Paste on your Local Computer
 * Updated: Transfroms Extension updated. On previous there's lack of interactions and slow the Editor Process. Imrpoved the functionality and performance.
 * Fixed: MA Advanced Accordion - Saved Section, Widget, Page Templates pro message shown
 * Fixed: MA Current Time - Custom Date Format dropdown issue fixed. Changed to TEXT format
-* Fixed: MA Countdown Timer - Datetime format issue fixed on Countdown timer. On previous time showing wrong format. 
+* Fixed: MA Countdown Timer - Datetime format issue fixed on Countdown timer. On previous time showing wrong format.
 * Added: Tooltip "Visible on Hover" added on "MA Tooltip" and "MA Image Hotspot" extension
 * Removed: Group Control "Transofrms" removed
 * Removed: Single Control "Transofrms" removed
@@ -463,28 +472,28 @@ Paste on your Local Computer
 * Fixed: MA Flipbox - Front Box description not showing issue fixed
 * Fixed: MA Flipbox - Title's changed from TEXT to TEXTAREA for better visibility. Design Styles bring to front for better UX, re-arranged controls for better usablity.
 * Updated: MA Flipbox - Added more controls on Action Button Style Tabs - Normal and Hover Settings
-* Updated: Main Navigation style breaking with some Themes has been fixed. 
+* Updated: Main Navigation style breaking with some Themes has been fixed.
 * Updated: Advanced Acordion - Collapse, Open icons changed from Dropdown to Icons Library. Repeater Icon also changed
 * Updated: Blog Element - Excerpt Icon changed from Dropdown to Icons Library, Icon alignment issue fixed
 * Updated: Business Hours - Icon dropdown changed to Icon Library Picker, Checked other compatibility
-* Updated: Creative Icons - Design Style Presets bring on front instead of Style Tab. Icon dropdown changed to Icon Library Picker, Icon Alignement issue fixed. 
+* Updated: Creative Icons - Design Style Presets bring on front instead of Style Tab. Icon dropdown changed to Icon Library Picker, Icon Alignement issue fixed.
 * Updated: Creative Links - Icons Library Updated to latest Fontawesome 5 Icons support. Alignement block issue fixed, brought Style Presets in fornt for better usability
 * Updated: Dual Heading - Icons Library Updated to latest Fontawesome 5 Icons support. Alignement block issue fixed, brought Style Presets in fornt for better usability. Conditional Icons select option fixed
 * Updated: Image Hover Effects - Icons Library Updated to latest Fontawesome 5 Icons support.
 * Updated: MA Infobox - Icons Library Updated to latest Fontawesome 5 Icons support. Style Presets brought on Content Section for better experience.
 * Updated: Pricing Table - Icons Library Updated to latest Fontawesome 5 Icons support. Style Presets brought on Content Section for better experience.
 * Updated: Table of Contents - Icons Library Updated to latest Fontawesome 5 Icons support.
-* Updated: MA Tabs - Icons Library Updated to latest Fontawesome 5 Icons support. 
-* Updated: MA Team Members - Icons Library Updated to latest Fontawesome 5 Icons support. 
-* Updated: MA Tooltips - Icons Library Updated to latest Fontawesome 5 Icons support. 
+* Updated: MA Tabs - Icons Library Updated to latest Fontawesome 5 Icons support.
+* Updated: MA Team Members - Icons Library Updated to latest Fontawesome 5 Icons support.
+* Updated: MA Tooltips - Icons Library Updated to latest Fontawesome 5 Icons support.
 * Added: MA Toggle Content - Icon options added on Repeater field and given compatibility.
-* Updated: MA Toggle Content - Icons Library Updated to latest Fontawesome 5 Icons support. 
+* Updated: MA Toggle Content - Icons Library Updated to latest Fontawesome 5 Icons support.
 * Updated: Bootstrap's default classes changed for conflicting issues with other themes - container, navbar, btn classes changed to "jltma-" prefix.
 * Updated: Default button color updated to Master Addons brand color also removed default font size, font family etc.
 * Supported: AcmePhoto Theme navigation broken style issue fixed
 * Supported: Comment Form - warning message showing for Hello Elementor Theme has been fixed
 
- 
+
 
 
 
@@ -493,7 +502,7 @@ Paste on your Local Computer
 * Update: Template Importer support given for both Elementor v2.x.x and v3.x.x
 * Fixed: WooCommerce Checkout page style issue fixed
 * Fixed: Custom Breakpoints Panel height issue fixed
-* Fixed: Custom Breakpoints updated with native Elementor support. It works exactly like default Breakpoints. 
+* Fixed: Custom Breakpoints updated with native Elementor support. It works exactly like default Breakpoints.
 * Fixed: Custom Breakpoints - Section/Columns and all other elements Breakpoints support given.
 * Fixed: Custom Breakpoints - Section/Column Import Export also works now
 * Fixed: Header_Footer class not found on oceanwp and other Themes issue fixed
@@ -506,7 +515,7 @@ Paste on your Local Computer
 * Fixed: "Template Import" not working on Elementor v3.0 issue fixed
 * Added: Dynamic Conditions Extension Added
 * Added: Dynamic Tags Extension Added (Which is available on Elementor Pro)
-* Added: Gallery Slider Addons Added 
+* Added: Gallery Slider Addons Added
 * Updated: Toggle Content - Added Toggle Border on Style Tab
 * Renamed: Re-named extension "Transitions" to "Entrance Animation"
 * Updated: All Animation effects working now on Entrance Animation, also fixed animation delay JS issues.

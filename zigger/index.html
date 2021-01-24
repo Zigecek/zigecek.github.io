@@ -421,7 +421,6 @@ class="post-899 page type-page status-publish ast-article-single" id="post-899" 
     setInterval(() => {
         function handleErrors(response) {
             if (!response.ok) {
-                throw Error(response.statusText);
                 const statObject = document.getElementById('bot-status');
                 if (statObject) {
                     if (statObject.style.color != '#AD3C3C'){
@@ -430,7 +429,8 @@ class="post-899 page type-page status-publish ast-article-single" id="post-899" 
                 }
                 if (uptObject) {
                     uptObject.innerHTML = 'Offline...';
-                }
+				}
+				throw Error(response.statusText);
             }
             return response;
         }

@@ -7,11 +7,11 @@
 	>
 <channel>
 	<title>
-	Komentáře k Zigecek	</title>
-	<atom:link href="http://zigecek.github.io/comments/feed" rel="self" type="application/rss+xml" />
-	<link>http://zigecek.github.io/</link>
-	<description>Další web používající WordPress</description>
-	<lastBuildDate>Tue, 19 Jan 2021 12:45:45 +0000</lastBuildDate>
+	Comments for Zigecek	</title>
+	<atom:link href="http://zigecek.github.io/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>http://zigecek.github.io</link>
+	<description></description>
+	<lastBuildDate>Tue, 26 Jan 2021 15:39:09 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>

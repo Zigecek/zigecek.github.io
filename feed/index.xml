@@ -9,23 +9,15 @@
 
 <channel>
 	<title>Zigecek</title>
-	<atom:link href="https://zigecek.github.io/feed/" rel="self" type="application/rss+xml" />
-	<link>https://zigecek.github.io/</link>
-	<description>Developer</description>
-	<lastBuildDate>Sun, 24 Jan 2021 11:11:44 +0000</lastBuildDate>
-	<language>cs</language>
+	<atom:link href="http://zigecek.github.io/feed/" rel="self" type="application/rss+xml" />
+	<link>http://zigecek.github.io</link>
+	<description></description>
+	<lastBuildDate>Tue, 26 Jan 2021 15:39:09 +0000</lastBuildDate>
+	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=5.6</generator>
-
-<image>
-	<url>https://zigecek.github.io/wp-content/uploads/2021/01/cropped-Bez-nazvu-1-32x32.png</url>
-	<title>Zigecek</title>
-	<link>https://zigecek.github.io/</link>
-	<width>32</width>
-	<height>32</height>
-</image> 
 </channel>
 </rss>

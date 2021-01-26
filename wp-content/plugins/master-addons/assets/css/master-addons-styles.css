@@ -232,7 +232,7 @@
 }
 
 /*.image-bg.ma-accordion-ten .ma-accordion-item.ten {
-    background: url(http://zigecek.github.io/wp-content/plugins/master-addons/assets/images/bg-image.png) center center no-repeat;
+    background: url(https://zigecek.github.io/wp-content/plugins/master-addons/assets/images/bg-image.png) center center no-repeat;
     background-size: cover;
 }*/
 .image-bg.ma-accordion-ten .ma-accordion-item.ten .ma-accordion-tab-content {
@@ -6009,7 +6009,7 @@ ul.slick-dots li.slick-active{
 
 
 .ma-el-img-grayscale {
-    /* filter: url(http://zigecek.github.io/wp-content/plugins/master-addons/assets/css/filters.svg#grayscale); Firefox 3.5+ */
+    /* filter: url(https://zigecek.github.io/wp-content/plugins/master-addons/assets/css/filters.svg#grayscale); Firefox 3.5+ */
     filter: gray; /* IE5+ */
     -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
     -webkit-transition: all 0.8s ease-in-out;
@@ -7558,9 +7558,9 @@ aside .jltma-advanced-image.jltma-alignleft, aside .jltma-advanced-image.jltma-a
 .jltma-preload.jltma-blank, .jltma-preloading.jltma-blank { opacity: 0; }
 
 .jltma-preloading.jltma-simple-spinner, .jltma-preloading.jltma-simple-spinner-light, .jltma-preloading.jltma-simple-spinner-dark { background-repeat: no-repeat; background-position: center center; }
-.jltma-preloading.jltma-simple-spinner { background-image: url(http://zigecek.github.io/wp-content/plugins/master-addons/assets/images/spinner-default.svg); }
-.jltma-preloading.jltma-simple-spinner-light { background-image: url(http://zigecek.github.io/wp-content/plugins/master-addons/assets/images/spinner-light.svg); }
-.jltma-preloading.jltma-simple-spinner-dark { background-image: url(http://zigecek.github.io/wp-content/plugins/master-addons/assets/images/spinner-dark.svg); }
+.jltma-preloading.jltma-simple-spinner { background-image: url(https://zigecek.github.io/wp-content/plugins/master-addons/assets/images/spinner-default.svg); }
+.jltma-preloading.jltma-simple-spinner-light { background-image: url(https://zigecek.github.io/wp-content/plugins/master-addons/assets/images/spinner-light.svg); }
+.jltma-preloading.jltma-simple-spinner-dark { background-image: url(https://zigecek.github.io/wp-content/plugins/master-addons/assets/images/spinner-dark.svg); }
 
 .jltma-preloaded.jltma-blank { animation-name: JltmaFadeInPreloaded; animation-duration: 400ms; animation-fill-mode: both; animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
@@ -7778,7 +7778,7 @@ aside .jltma-advanced-image.jltma-alignleft, aside .jltma-advanced-image.jltma-a
         width: 100%;
         border: none;
         padding: 18px 20px 18px 20px;
-        background: url("http://zigecek.github.io/wp-content/plugins/master-addons/assets/images/dropdown.png") no-repeat 85% center white;
+        background: url("https://zigecek.github.io/wp-content/plugins/master-addons/assets/images/dropdown.png") no-repeat 85% center white;
         font-size: 16px; /* 16px prevents iOS zooming when clicking select */
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -7863,7 +7863,7 @@ aside .jltma-advanced-image.jltma-alignleft, aside .jltma-advanced-image.jltma-a
         }
         .ma_el_ra_select {
             padding: 18px 20px 18px 20px;
-            background: url("http://zigecek.github.io/wp-content/plugins/master-addons/assets/images/dropdown.png") no-repeat 85% center white;
+            background: url("https://zigecek.github.io/wp-content/plugins/master-addons/assets/images/dropdown.png") no-repeat 85% center white;
         }
         .ma_el_ra_select_wrap:nth-of-type(1) .ma_el_ra_select {
             -webkit-border-radius: 4px 0px 0px 4px;
@@ -8951,7 +8951,7 @@ span.jltma-menu-label {
 
 /* Sub Men Indicator */
 .jltma-navbar-nav-default.jltma-svg-arrow .jltma-submenu-indicator {
-    background-image: url("http://zigecek.github.io/wp-content/plugins/master-addons/assets/images/symbols.svg");
+    background-image: url("https://zigecek.github.io/wp-content/plugins/master-addons/assets/images/symbols.svg");
     background-repeat: no-repeat;
     display: block;
     width: 10px;
@@ -9058,7 +9058,7 @@ span.jltma-menu-label {
 
 @media (max-width: 768px) {
     .jltma-navbar-nav-default.jltma-svg-arrow .jltma-submenu-indicator{
-        background-image: url("http://zigecek.github.io/wp-content/plugins/master-addons/assets/images/symbols.svg");
+        background-image: url("https://zigecek.github.io/wp-content/plugins/master-addons/assets/images/symbols.svg");
         background-repeat: no-repeat;
         background-position: 0px -687px;
         left: initial;

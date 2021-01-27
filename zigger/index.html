@@ -44,7 +44,7 @@ html{font-size:93.75%;}a,.page-title{color:#99cc00;}a:hover,a:focus{color:#65870
 <link rel='stylesheet' id='elementor-post-475-css'  href='https://zigecek.github.io/wp-content/uploads/elementor/css/post-475.css?ver=1611668480' media='all' />
 <link rel='stylesheet' id='font-awesome-5-all-css'  href='https://zigecek.github.io/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=3.1.0' media='all' />
 <link rel='stylesheet' id='font-awesome-4-shim-css'  href='https://zigecek.github.io/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.1.0' media='all' />
-<link rel='stylesheet' id='elementor-post-535-css'  href='https://zigecek.github.io/wp-content/uploads/elementor/css/post-535.css?ver=1611685482' media='all' />
+<link rel='stylesheet' id='elementor-post-535-css'  href='https://zigecek.github.io/wp-content/uploads/elementor/css/post-535.css?ver=1611706653' media='all' />
 <link rel='stylesheet' id='hfe-widgets-style-css'  href='https://zigecek.github.io/wp-content/plugins/header-footer-elementor/inc/widgets-css/frontend.css?ver=1.5.6' media='all' />
 <link rel='stylesheet' id='jltma-bootstrap-css'  href='https://zigecek.github.io/wp-content/plugins/master-addons/assets/css/bootstrap.min.css?ver=5.6' media='all' />
 <link rel='stylesheet' id='master-addons-main-style-css'  href='https://zigecek.github.io/wp-content/plugins/master-addons/assets/css/master-addons-styles.css?ver=5.6' media='all' />
@@ -410,80 +410,121 @@ class="hfeed site" id="page">
 				<div class="elementor-widget-container">
 			<ul style="color: #C2C2C2;">
     <li>
-        <span id="bot-status" style="color: #00ff00;">Online</span>
+        <span id="bot-status" style="color: #00ff00;">
+            Online
+        </span>
     </li>
     <li>
-        <span style="color: #C2C2C2;">Uptime:
-            <span id="bot-uptime" style="color: #C2C2C2;">Loading...</span>
+        <span style="color: #C2C2C2;">
+            Uptime:
+            <span id="bot-uptime" style="color: #C2C2C2;">
+                Loading...
+            </span>
+        </span>
+    </li>
+    <li>
+        <span style="color: #C2C2C2;">
+            CPU Usage:
+            <span id="bot-cpu" style="color: #C2C2C2;">
+                Loading...
+                </span>
+        </span>
+    </li>
+    <li>
+        <span style="color: #C2C2C2;">
+            RAM Usage:
+            <span id="bot-ram" style="color: #C2C2C2;">
+                Loading...
+            </span>
         </span>
     </li>
 </ul>
 <script>
-    setInterval(() => {
-        function handleErrors(response) {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
+setInterval(() => {
+    function handleErrors(response) {
+        if (!response.ok) {
+            throw Error(response.statusText);
         }
+        return response;
+    }
 
-        const statObject = document.getElementById('bot-status');
-        const uptObject = document.getElementById('bot-uptime');
+    const statObject = document.getElementById('bot-status');
+    const uptObject = document.getElementById('bot-uptime');
+    const cpuObject = document.getElementById('bot-cpu');
+    const ramObject = document.getElementById('bot-ram');
 
-        if (uptObject || statObject) {
-            fetch('https://Zigger.zige.repl.co/status')
-                .then(handleErrors)
-                .then(response => {return response.json()})
-                .then(res => {
-                    if (res) {
-                        if (uptObject) {
-                            function sec2human(seconds) {
-                                const h = Math.floor(+seconds / 3600);
-                                const m = Math.floor(+seconds % 3600 / 60);
-                                const s = Math.floor(+seconds % 3600 % 60);
-                                const pad = n => n.toString().padStart(2, '0');
-                                let resp = m == 0 && h == 0 ? s : pad(s);
-                                if (m || h) resp = (h == 0 ? m : pad(m)) + ':' + resp;
-                                    if (h) resp = h + ':' + resp;
-                                return resp;
-                            };
-                            if (res.uptime != null && res.uptime != undefined && res.uptime != 0){
-                                uptObject.innerHTML = sec2human(Math.floor(res.uptime / 1000));
-                            } else {
-                                uptObject.innerHTML = 'Starting...';
-                            }
+    if (uptObject || statObject || cpuObject || ramObject) {
+        fetch('https://Zigger.zige.repl.co/status')
+            .then(handleErrors)
+            .then(response => { return response.json() })
+            .then(res => {
+                if (res) {
+                    if (uptObject) {
+                        function sec2human(seconds) {
+                            const h = Math.floor(+seconds / 3600);
+                            const m = Math.floor(+seconds % 3600 / 60);
+                            const s = Math.floor(+seconds % 3600 % 60);
+                            const pad = n => n.toString().padStart(2, '0');
+                            let resp = m == 0 && h == 0 ? s : pad(s);
+                            if (m || h) resp = (h == 0 ? m : pad(m)) + ':' + resp;
+                            if (h) resp = h + ':' + resp;
+                            return resp;
                         };
-                        if (statObject) {
-                            if (res.status == 200) {
-                                if (statObject.style.color != '#00FF00'){
-                                    statObject.style.color = '#00FF00';
-                                };
-                                statObject.innerHTML = 'Online';
-                            } else {
-                                if (statObject.style.color != '#AD3C3C'){
-                                    statObject.style.color = '#AD3C3C';
-                                };
-                                statObject.innerHTML = 'Offline';
-                            }
+                        if (res.uptime != null && res.uptime != undefined && res.uptime != 0) {
+                            uptObject.innerHTML = sec2human(Math.floor(res.uptime / 1000));
+                        } else {
+                            uptObject.innerHTML = 'Starting...';
                         }
                     };
-                })
-                .catch(function(error) {
-                    const statObject = document.getElementById('bot-status');
                     if (statObject) {
-                        if (statObject.style.color != '#AD3C3C'){
-                            statObject.style.color = '#AD3C3C';
-                        };
+                        if (res.status == 200) {
+                            if (statObject.style.color != '#00FF00') {
+                                statObject.style.color = '#00FF00';
+                            };
+                            statObject.innerHTML = 'Online';
+                        } else {
+                            if (statObject.style.color != '#AD3C3C') {
+                                statObject.style.color = '#AD3C3C';
+                            };
+                            statObject.innerHTML = 'Offline';
+                        }
                     }
-                
-                    const uptObject = document.getElementById('bot-uptime');
-                    if (uptObject) {
-                        uptObject.innerHTML = 'Offline...';
+                    if (cpuObject) {
+                        cpuObject.innerHTML = res.cpu;
                     }
-                    console.log(error);
-                });
-        };
-    }, 1000)
+                    if (ramObject) {
+                        ramObject.innerHTML = res.usedMem;
+                    }
+                };
+            })
+            .catch(function (error) {
+                const statObject = document.getElementById('bot-status');
+                if (statObject) {
+                    if (statObject.style.color != '#AD3C3C') {
+                        statObject.style.color = '#AD3C3C';
+                    };
+                    statObject.innerHTML = 'Offline';
+                }
+
+                const uptObject = document.getElementById('bot-uptime');
+                if (uptObject) {
+                    uptObject.innerHTML = 'Offline...';
+                }
+
+                const cpuObject = document.getElementById('bot-cpu');
+                if (cpuObject) {
+                    cpuObject.innerHTML = 'Offline...';
+                }
+
+                const ramObject = document.getElementById('bot-ram');
+                if (ramObject) {
+                    ramObject.innerHTML = 'Offline...';
+                }
+
+                console.log(error);
+            });
+    };
+}, 1000)
 </script>		</div>
 				</div>
 					</div>

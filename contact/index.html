@@ -44,7 +44,7 @@ html{font-size:93.75%;}a,.page-title{color:#99cc00;}a:hover,a:focus{color:#65870
 <link rel='stylesheet' id='elementor-post-475-css'  href='https://zigecek.github.io/wp-content/uploads/elementor/css/post-475.css?ver=1611668480' media='all' />
 <link rel='stylesheet' id='font-awesome-5-all-css'  href='https://zigecek.github.io/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=3.1.0' media='all' />
 <link rel='stylesheet' id='font-awesome-4-shim-css'  href='https://zigecek.github.io/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.1.0' media='all' />
-<link rel='stylesheet' id='elementor-post-609-css'  href='https://zigecek.github.io/wp-content/uploads/elementor/css/post-609.css?ver=1611794486' media='all' />
+<link rel='stylesheet' id='elementor-post-609-css'  href='https://zigecek.github.io/wp-content/uploads/elementor/css/post-609.css?ver=1611821292' media='all' />
 <link rel='stylesheet' id='hfe-widgets-style-css'  href='https://zigecek.github.io/wp-content/plugins/header-footer-elementor/inc/widgets-css/frontend.css?ver=1.5.6' media='all' />
 <link rel='stylesheet' id='jltma-bootstrap-css'  href='https://zigecek.github.io/wp-content/plugins/master-addons/assets/css/bootstrap.min.css?ver=5.6' media='all' />
 <link rel='stylesheet' id='master-addons-main-style-css'  href='https://zigecek.github.io/wp-content/plugins/master-addons/assets/css/master-addons-styles.css?ver=5.6' media='all' />
@@ -376,6 +376,38 @@ class="hfeed site" id="page">
     </li>
 </ul>		</div>
 				</div>
+				<div class="elementor-element elementor-element-3b2d10b elementor-widget elementor-widget-html" data-id="3b2d10b" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+			<script>
+console.log('sdafgfsafas')
+    document.onload = () => {
+        console.log('sdafgfsafas')
+        var iframe = document.getElementById('widget-dis');
+        if (iframe){
+            console.log('sdafgfsafas')
+            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            if (iframeDoc){
+                console.log('sdafgfsafas')
+                var script = iframeDoc.createElement("script");
+                if (script){
+                    console.log('sdafgfsafas')
+                    script.innerHTML = "options = {
+	                    "cursorOuter": "circle-basic",
+	                    "hoverEffect": "circle-move",
+	                    "hoverItemMove": false,
+	                    "defaultCursor": false,
+	                    "outerWidth": 30,
+	                    "outerHeight": 30
+	                    };
+	                    magicMouse(options);"
+	                iframeDoc.body.appendChild(script);
+	                console.log('sdafgfsafas')
+                }
+            }
+        }
+	}
+</script>		</div>
+				</div>
 					</div>
 		</div>
 				<div class="has_ma_el_bg_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1f405aa" data-id="1f405aa" data-element_type="column">
@@ -386,18 +418,16 @@ class="hfeed site" id="page">
 				</div>
 				<div class="elementor-element elementor-element-fcbe8f1 elementor-widget elementor-widget-html" data-id="fcbe8f1" data-element_type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
-			<div>
-    <iframe 
-        src="https://discord.com/widget?id=724179837744316456&theme=dark" 
-        width="200" 
-        height="500" 
-        allowtransparency="true" 
-        frameborder="0" 
-        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-        id="widget-dis"
+			<iframe 
+    src="https://discord.com/widget?id=724179837744316456&theme=dark" 
+    width="200" 
+    height="500" 
+    allowtransparency="true" 
+    frameborder="0" 
+    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+    id="widget-dis"
     >
-    </iframe>
-</div>		</div>
+</iframe>		</div>
 				</div>
 					</div>
 		</div>

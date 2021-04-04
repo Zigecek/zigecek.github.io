@@ -1,6 +1,6 @@
-/* 
- * ================== js/jquery.appearl.js =================== 
- */ 
+/*
+ * ================== js/jquery.appearl.js ===================
+ */
 
 ;( function( $, window, document, undefined ) {
 
@@ -102,10 +102,10 @@
 
 
 
-  /*! 
-   * 
-   * ================== js/plugins/tilt.jquery.js =================== 
-   **/ 
+  /*!
+   *
+   * ================== js/plugins/tilt.jquery.js ===================
+   **/
   (function (factory) {
       if (typeof define === 'function' && define.amd) {
           // AMD. Register as an anonymous module.
@@ -486,9 +486,9 @@
 
 
 
-/*! 
- * ================== js/libs/plugins/lazysizes.js =================== 
- **/ 
+/*!
+ * ================== js/libs/plugins/lazysizes.js ===================
+ **/
 
 (function(window, factory) {
   var lazySizes = factory(window, window.document);
@@ -1187,7 +1187,6 @@
   return lazysizes;
 }
 ));
-
 
 
 } )( jQuery, window, document );

@@ -12437,7 +12437,7 @@ Mega Menu Customization
 /* Badge */
 .jltma-menu-badge {
     position: absolute;
-    top: -5px;
+    top: -22px;
     left: 40px;
     background-color: #bbb;
     color: #fff;
@@ -15525,7 +15525,7 @@ ul.jltma-toggle-content-controls {
 }
 .jltma-swiper__navigation--middle.jltma-swiper__navigation--center {
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 .jltma-swiper__navigation--middle.jltma-swiper__navigation--left {
     align-items: center;

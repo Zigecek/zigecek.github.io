@@ -11,11 +11,11 @@
 	<atom:link href="https://zigecek.github.io/comments/feed/" rel="self" type="application/rss+xml" />
 	<link>https://zigecek.github.io</link>
 	<description></description>
-	<lastBuildDate>Mon, 12 Apr 2021 13:09:57 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 14 May 2021 20:36:00 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.7</generator>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
 </channel>
 </rss>

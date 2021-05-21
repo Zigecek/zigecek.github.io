@@ -9,8 +9,8 @@
 
 <channel>
 	<title>Zigecek</title>
-	<atom:link href="https://zigecek.github.io/feed/" rel="self" type="application/rss+xml" />
-	<link>https://zigecek.github.io</link>
+	<atom:link href="https://kozohorsky.xyz/feed/" rel="self" type="application/rss+xml" />
+	<link>https://kozohorsky.xyz</link>
 	<description></description>
 	<lastBuildDate>Sat, 15 May 2021 08:05:07 +0000</lastBuildDate>
 	<language>en-US</language>
